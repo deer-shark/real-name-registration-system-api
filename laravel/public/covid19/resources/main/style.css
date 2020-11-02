@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Noto+Serif+TC:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  font-family:  'Fira Code', 'Noto Sans TC', sans-serif;
+}
+.navbar-brand, .container .data-h3, .btn {
+  font-family: 'Noto Serif TC', 'Noto Serif JP', 'Noto Sans TC', sans-serif;
+}
+body {
+    padding-top: 4.5rem;
+}
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+.navbar .nav-item:hover .dropdown-menu .dropdown-item {
+  padding:15px;
+}
+.navbar .nav-item:hover .dropdown-menu .dropdown-item:hover {
+  border-left:  3px  solid gray;
+  padding: 15px 15px 15px 12px;
+  background-color: lightgray;
+}
+.container.dashboard {
+  padding-top:8px;
+}
