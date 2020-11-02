@@ -26,12 +26,13 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="A3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-tools"></i> 活動管理
+                        <a class="nav-link dropdown-toggle" href="#" id="A4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-toggle-on"></i> 系統管理
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="A3">
-                            {{--  <a class="dropdown-item" href="{{ route('data') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
-                            <a class="dropdown-item" href="{{ route('export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>  --}}
+                        <div class="dropdown-menu" aria-labelledby="A4">
+                            <a class="dropdown-item" href="{{ route('account') }}"><i class="far fa-user-circle"></i> 修改組織資料</a>
+                            <a class="dropdown-item" href="{{ route('setting.events') }}"><i class="fas fa-tools"></i>  活動管理</a>
+                            <a class="dropdown-item" href="{{ route('setting.function') }}"><i class="fas fa-mouse-pointer"></i> 功能管理</a>
                         </div>
                     </li>
                     {{--  <li class="nav-item">
@@ -39,9 +40,7 @@
                     </li>  --}}
                 </ul>
                 <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('account') }}"><i class="far fa-user-circle"></i> 修改組織資料</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">登出 <i class="fas fa-sign-out-alt"></i></a>
                     </li>

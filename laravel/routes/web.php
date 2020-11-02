@@ -29,9 +29,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('covid19')->group(function ()
+Route::prefix('')->group(function ()
 {
-    Route::prefix('xmas')->group(function ()
+    Route::prefix('kshs')->group(function ()
     {   
         //根目錄
         Route::view('/', 'covid.index')->name('home');
@@ -52,7 +52,16 @@ Route::prefix('covid19')->group(function ()
             Route::view('/auth-card', 'covid.frontend.forms.manage.auth-card')->name('liveauthcard');
         });
 
-        //管理端
+        //系統管理
+        Route::prefix('setting')->group(function ()
+        {
+            //活動管理
+            Route::view('/events', 'covid.frontend.setting.events')->name('setting.events');
+            //功能管理
+            Route::view('/function', 'covid.frontend.setting.function')->name('setting.function');
+        });
+
+        //帳號管理端
         Route::prefix('dashboard')->group(function ()
         {
             Route::get('/', function () {
@@ -80,6 +89,8 @@ Route::prefix('covid19')->group(function ()
         //Backend
         Route::prefix('backend/post')->group(function ()
         {
+            Route::view('/database', 'covid.backend.test.database');
+            
             //修改個人資料
             Route::post('/account', function () {
                 return view('covid.backend.sql.account.update');
