@@ -31,6 +31,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function ()
 {
+    Route::get('user/{id}', function ($id) {
+        return 'User '.$id;
+    });
     Route::prefix('ychs')->group(function ()
     {   
         //根目錄
@@ -81,9 +84,10 @@ Route::prefix('')->group(function ()
                 //Data
                 Route::prefix('data')->group(function ()
                 {
-                    Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data');
+                    Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data.manage');
                     Route::view('/edit', 'covid.frontend.dashboard.manage.edit');
-                    Route::view('/export', 'covid.frontend.dashboard.manage.export')->name('export');
+                    Route::view('/export', 'covid.frontend.dashboard.manage.export')->name('data.export');
+                    Route::view('/import', 'covid.frontend.dashboard.manage.import')->name('data.import');
                 });
             });
         });
@@ -117,6 +121,10 @@ Route::prefix('')->group(function ()
                 Route::post('/auth-card', function () {
                     return view('covid.backend.sql.forms.input_id-card');
                 })->name('post.form.auth-card');
+                //現場刷入學生證
+                Route::post('/stu-card', function () {
+                    return view('covid.backend.sql.forms.input_stu-card');
+                })->name('post.form.stu-card');
             });
         });
 
