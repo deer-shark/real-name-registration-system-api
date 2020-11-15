@@ -48,6 +48,8 @@ Route::prefix('')->group(function ()
             Route::view('/normal/auth', 'covid.frontend.forms.public.auth-card');
             //入口刷入身分證
             Route::view('/id-card', 'covid.frontend.forms.manage.idcard')->name('liveid');
+            //入口刷入學生證
+            Route::view('/stu-card', 'covid.frontend.forms.manage.stucard')->name('livestu');
             //入口刷入識別證
             Route::view('/auth-card', 'covid.frontend.forms.manage.auth-card')->name('liveauthcard');
         });
