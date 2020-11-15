@@ -61,13 +61,15 @@
                                 <div class="form-group">
                                     <label><i class="far fa-user"></i> 學生照片</label>
                                     <div class="d-flex justify-content-center">
-                                        <img src="https://img.imych.one/me/images/YC.jpg?v=1.3.2" class="img-fluid">
+                                        <img src="{{ asset('covid19/resources/main/images/avr-dafault.png') }}" class="img-fluid">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label><i class="fas fa-barcode"></i> 學生證條碼</label>
                                     <div class="d-flex justify-content-center">
-                                        <img class="img-fluid" src="https://www.cognex.com/api/Sitecore/Barcode/Get?data=123&code=BCL_CODE128&width=550&imageType=PNG&foreColor=%23000000&backColor=%23FFFFFF&rotation=RotateNoneFlipNone">
+                                        <div class="form-group">
+                                            <span class="barcode">082152</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

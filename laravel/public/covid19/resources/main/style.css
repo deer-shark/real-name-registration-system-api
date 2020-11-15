@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Noto+Serif+TC:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre Barcode 128');
 * {
   font-family:  'Fira Code', 'Noto Sans TC', sans-serif;
 }
@@ -30,4 +31,7 @@ body {
 }
 .stu-in {
   width:100%;
+}
+.barcode {
+  font-family: 'Libre Barcode 128';font-size: 75px;
 }
