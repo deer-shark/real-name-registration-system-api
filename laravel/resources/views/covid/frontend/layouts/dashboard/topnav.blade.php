@@ -22,8 +22,9 @@
                             <i class="fas fa-cogs"></i> 填報管理
                         </a>
                         <div class="dropdown-menu" aria-labelledby="A2">
-                            <a class="dropdown-item" href="{{ route('data') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
-                            <a class="dropdown-item" href="{{ route('export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>
+                            <a class="dropdown-item" href="{{ route('data.manage') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
+                            <a class="dropdown-item" href="{{ route('data.export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>
+                            <a class="dropdown-item" href="{{ route('data.import') }}"><i class="fas fa-cloud-upload-alt"></i> 匯入資料</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
