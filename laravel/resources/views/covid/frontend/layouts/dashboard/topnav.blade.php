@@ -14,6 +14,7 @@
                         <div class="dropdown-menu" aria-labelledby="A1">
                             <a class="dropdown-item" href="{{ route('liveauthcard') }}"><i class="far fa-id-badge"></i> 刷入識別證</a>
                             <a class="dropdown-item" href="{{ route('liveid') }}"><i class="far fa-id-card"></i> 刷入身分證</a>
+                            <a class="dropdown-item" href="{{ route('livestu') }}"><i class="fas fa-id-card-alt"></i> 刷入學生證</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
