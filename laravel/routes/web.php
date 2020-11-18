@@ -29,12 +29,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('')->group(function ()
+Route::prefix('ychs')->group(function ()
 {
     Route::get('user/{id}', function ($id) {
         return 'User '.$id;
     });
-    Route::prefix('ychs')->group(function ()
+    Route::prefix('entry')->group(function ()
     {   
         //根目錄
         Route::view('/', 'covid.index')->name('home');
