@@ -42,27 +42,29 @@
                         <button type="submit" class="btn btn-lg btn-primary">送出填報 <i class="fab fa-telegram-plane"></i></button>
                     </form>
                     <hr>
-                    <div class="row">
-                        <div class="alert alert-success stu-in">
-                            <i class="fas fa-id-card-alt"></i> 082152 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入，體溫35.7度</span>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                    <div class="container stu-in">
+                        <div class="row">
+                            <div class="alert alert-success">
+                                <i class="fas fa-id-card-alt"></i> 082152 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入，體溫35.7度</span>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="alert alert-danger stu-in">
-                            <i class="fas fa-id-card-alt"></i> 081085 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入，體溫未量測</span>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                            <div class="alert alert-danger">
+                                <i class="fas fa-id-card-alt"></i> 081085 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入，體溫未量測</span>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
