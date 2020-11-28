@@ -5,8 +5,8 @@
     <main role="main" class="container">
         <div class="jumbotron">
             <h1 class="data-h3"><i class="far fa-id-badge"></i> xxx活動通行證</h1>
-            <p class="lead">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>
-                <div class="row">
+            <p class="lead d-flex justify-content-center">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>
+                {{-- <div class="row">
                     <div class="col">
                         <div class="form-group">
                             <label for="time"><i class="far fa-clock"></i> 時間</label>
@@ -52,11 +52,39 @@
                     <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
                     <textarea class="form-control is-invalid" id="note" placeholder="備註" disabled ></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="note"><i class="fas fa-barcode"></i> 識別條碼</label>
-                    <div class="d-flex justify-content-center">
-                        <img class="img-fluid" src="https://www.cognex.com/api/Sitecore/Barcode/Get?data=123&code=BCL_CODE128&width=550&imageType=PNG&foreColor=%23000000&backColor=%23FFFFFF&rotation=RotateNoneFlipNone">
+                --}}
+                <div class="row">
+                    {{-- <div class="col">
+                        <div class="form-group">
+                            <label for="time"><i class="fas fa-barcode"></i> 逼逼條碼</label><br>
+                            <div class="d-flex justify-content-center">
+                                <svg id="barcode" width="100%"></svg>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="col">
+                        <div class="form-group">
+                            {{-- <label for="location"><i class="fas fa-qrcode"></i> 掃掃條碼</label><br> --}}
+                            <div id="qrcode" class="d-flex justify-content-center"></div> 
+                        </div>
                     </div>
+                </div>
+            <p class="lead d-flex justify-content-center">請妥善保存您的 QR Code 以供入場查驗用。</p>
+            
+<script> 
+//table 模式相容 IE低版本 
+$('#qrcode').qrcode({
+    render: 'table',
+    colorDark : "#000000",
+    colorLight : "rgba(0,0,0,0)",
+    text: 'http://www.google.com'
+});
+JsBarcode("#barcode", "Hi world!",{
+    background: "rgba(0,0,0,0)",
+    lineColor: "#000000",
+});
+</script> 
+
                 </div>
                 
         </div>
