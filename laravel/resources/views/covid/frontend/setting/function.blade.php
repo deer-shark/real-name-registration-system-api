@@ -1,9 +1,9 @@
-@extends('covid.frontend.layouts.master')
 @extends('covid.frontend.layouts.dashboard.master')
+@extends('covid.frontend.layouts.master')
 @section('title', '功能管理')
 @section('content')
     @section('dashboard')
-        <div class="container">
+        <div class="container ct-s">
             <div class="table-responsive">
                 <table class="table">
                     <thead class="thead-light">

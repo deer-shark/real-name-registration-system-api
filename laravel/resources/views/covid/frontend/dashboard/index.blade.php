@@ -1,5 +1,5 @@
-@extends('covid.frontend.layouts.master')
 @extends('covid.frontend.layouts.dashboard.master')
+@extends('covid.frontend.layouts.master')
 @section('title', 'OverView')
 @section('content')
     @section('dashboard')

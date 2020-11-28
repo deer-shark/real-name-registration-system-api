@@ -1,9 +1,9 @@
-@extends('covid.frontend.layouts.master')
 @extends('covid.frontend.layouts.dashboard.master')
+@extends('covid.frontend.layouts.master')
 @section('title', '現場刷入學生證')
 @section('content')
     @section('dashboard')
-        <div class="container">
+        <div class="container ct-s">
             <div class="row">
                 <div class="col-sm-6">
                     <form action="{{ route('post.form.stu-card') }}" method="POST" class="stu-in">

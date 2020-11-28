@@ -1,7 +1,7 @@
 @extends('covid.frontend.layouts.master')
 @section('title', '一般身分填報')
 @section('content')
-<div class="container">
+<div class="container ct-s">
     <h3 class="data-h3">@yield('title')</h3>
     <form action="{{ route('post.form.normal') }}" method="POST">
         <div class="row">

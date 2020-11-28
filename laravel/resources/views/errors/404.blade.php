@@ -1,7 +1,7 @@
 @extends('covid.frontend.layouts.master')
 @section('title', '404 Not Found')
 @section('content')
-<div class="container">
+<div class="container ct-s">
     <main role="main" class="container">
         <div class="jumbotron">
             <h1 class="data-h3"><i class="fas fa-times"></i> 系統出現錯誤</h1>

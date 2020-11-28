@@ -1,4 +1,4 @@
-@include('covid.frontend.layouts.dashboard.topnav')
+{{-- @include('covid.frontend.layouts.dashboard.topnav') --}}
 <div class="container dashboard">
     <h3 class="data-h3">@yield('title')</h3>
     {{--  <div class="row">

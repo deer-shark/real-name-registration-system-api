@@ -1,9 +1,9 @@
-@extends('covid.frontend.layouts.master')
 @extends('covid.frontend.layouts.dashboard.master')
+@extends('covid.frontend.layouts.master')
 @section('title', '活動管理')
 @section('content')
     @section('dashboard')
-        <div class="container">
+        <div class="container ct-s">
             <form action="{{ route('post.form.auth-card') }}" method="POST">
                 <div class="row">
                     <div class="col-sm">
