@@ -53,3 +53,32 @@
             </div>
     </nav>
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarrrrr" aria-controls="navbarrrrr" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarrrrr">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i> 首頁 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('basicform') }}"><i class="far fa-edit"></i> 一般身分填報</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('query') }}"><i class="far fa-id-badge"></i> 通行證查詢</a>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                        <span class="nav-link">嗨！xx高中。</span>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt"></i> 管理區</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
