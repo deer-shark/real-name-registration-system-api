@@ -1,25 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="utf-8">
     <title>@yield('title')－實名制填報系統</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="@yield('title')－實名制填報系統">
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css">
     <link href="{{ asset('covid19/resources/main/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('covid19/resources/main/bsstyle.css') }}" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="{{ asset('covid19/resources/main/jquery.barcode.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('covid19/resources/main/jquery.qrcode.js') }}" type="text/javascript"></script>
+    <meta property="og:locale" content="zh_TW" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <!-- icons -->
+    <meta property="og:image" content="https://img.imych.one/works/smhs-reader/images/cover/preview.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="https://me.imych.one/icon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://img.imych.one/me/images/youu.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://img.imych.one/me/images/youu.png">
+    <style>
+        section.header .banner {
+            /* background:url("{{ asset('covid19/resources/main/images/DSC_3242.jpg') }}") gray no-repeat center; */
+            /* background-size: cover; */
+            /* filter: blur(4px); */
+        }
+    </style>
 </head>
 
 <body>
     @include('covid.frontend.layouts.header')
-    @include('covid.frontend.layouts.navbar')
     <div class="ct">
         @yield('content')
     </div>
     @include('covid.frontend.layouts.footer')
 </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"></script>
 </html>
