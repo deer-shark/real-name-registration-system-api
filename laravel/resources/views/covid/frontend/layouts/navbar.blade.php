@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light" id="nav">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarrrrr" aria-controls="navbarrrrr" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>我是選單！點我！！
+        {{-- <span class="navbar-brand"></span> --}}
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarrrrr" aria-controls="navbarrrrr" aria-expanded="false" aria-label="Toggle navigation" style="width:100%;border-color:#FFF;">
+            {{-- <span class="navbar-toggler-icon text-white"></span> --}}
+            <i class="fas fa-bars"></i> Menu
         </button>
         <div class="collapse navbar-collapse" id="navbarrrrr">
             <ul class="navbar-nav mr-auto">
