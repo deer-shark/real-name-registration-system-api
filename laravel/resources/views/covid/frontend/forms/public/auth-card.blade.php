@@ -5,7 +5,7 @@
     <main role="main" class="container">
         <div class="jumbotron">
             <h1 class="data-h3"><i class="far fa-id-badge"></i> xxx活動通行證</h1>
-            <p class="lead d-flex justify-content-center">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>
+            {{--  <p class="lead d-flex justify-content-center">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>  --}}
                 {{-- <div class="row">
                     <div class="col">
                         <div class="form-group">
