@@ -50,11 +50,17 @@ Route::prefix('ychs')->group(function ()
             //一般填寫識別證畫面
             Route::view('/normal/auth', 'covid.frontend.forms.public.auth-card');
             //入口刷入身分證
-            Route::view('/id-card', 'covid.frontend.forms.manage.idcard')->name('liveid');
+            Route::view('/id-card', 'covid.frontend.forms.manage.idcard')->name('live.id');
             //入口刷入學生證
-            Route::view('/stu-card', 'covid.frontend.forms.manage.stucard')->name('livestu');
+            Route::view('/stu-card', 'covid.frontend.forms.manage.stucard')->name('live.stu');
             //入口刷入識別證
-            Route::view('/auth-card', 'covid.frontend.forms.manage.auth-card')->name('liveauthcard');
+            Route::view('/auth-card', 'covid.frontend.forms.manage.auth-card')->name('live.authcard');
+            //入口掃入QR ID
+            Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard')->name('live.scan');
+            //入口掃入QR ID(KSHS)
+            Route::view('/scan/kshs', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
+            //入口掃入學生證-手機板
+            Route::view('/scan/m', 'covid.frontend.forms.manage.scan-stucard-mobile')->name('live.scan.mobile');
         });
 
         //系統管理
