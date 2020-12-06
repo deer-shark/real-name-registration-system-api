@@ -11,9 +11,9 @@
     <link href="{{ asset('covid19/resources/main/bsstyle.css') }}" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/jquery.barcode.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/jquery.qrcode.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('covid19/resources/main/instascan.min.js') }}" type="text/javascript"></script>
     <meta property="og:locale" content="zh_TW" />
     <meta http-equiv="pragma" content="no-cache">
     <meta name="author" content="">

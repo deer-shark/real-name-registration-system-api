@@ -5,22 +5,23 @@
     scanner.addListener('scan', function (content) {
         var output = content
         console.log(output);
-// 查詢
-    const baseUrl = 'https://api.fios.fssh.khc.edu.tw';
-    fetch(`${baseUrl}/api/oauth/token`, {
-        method: 'POST',
-        cors: 'cors',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(response => {
-        return response.json()
-    }).then(result => {
-        $('#result')[0].value = JSON.stringify(result);
-        
-        alert(`ID: ${result.id}／檢驗項目：${result.code.coding[0].display}／檢驗值：${result.valueQuantity.value} ${result.valueQuantity.unit}`)
+        //POST
+        const baseUrl = 'https://api.fios.fssh.khc.edu.tw';
+        fetch(`${baseUrl}/api/oauth/token`, {
+            method: 'POST',
+            cors: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            return response.json()
+        }).then(result => {
+            $("#recently").prepend("<b>Hello world!</b>");
+            // $('#result')[0].value = JSON.stringify(result);
+            
+            // alert(`ID: ${result.id}／檢驗項目：${result.code.coding[0].display}／檢驗值：${result.valueQuantity.value} ${result.valueQuantity.unit}`)
 
-    });
+        });
     });
     Instascan.Camera.getCameras().then(function (cameras){
                     if(cameras.length>0){
@@ -29,14 +30,14 @@
                             if($(this).val()==1){
                                 if(cameras[0]!=""){
                                     scanner.start(cameras[0]);
-scanner.mirror=true;
+                                    scanner.mirror=true;
                                 }else{
                                     alert('No Front camera found!');
                                 }
                             }else if($(this).val()==2){
                                 if(cameras[1]!=""){
                                     scanner.start(cameras[1]);
-scanner.mirror=false;
+                                    scanner.mirror=false;
                                 }else{
                                     alert('No Back camera found!');
                                 }
