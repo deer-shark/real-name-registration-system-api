@@ -89,11 +89,13 @@
                                     <label><i class="fas fa-tasks"></i> 近期掃入清單</label>
                                     <button type="button" class="badge btn-sm btn-outline-danger">清除</button>
                                 </div>
-                                <div class="alert alert-success stu-in">
-                                    <i class="fas fa-id-card-alt"></i> 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入</span>
-                                </div>
-                                <div class="alert alert-danger stu-in">
-                                    <i class="fas fa-id-card-alt"></i> 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入</span>
+                                <div id="recently" class="stu-in">
+                                    <div class="alert alert-success stu-in">
+                                        <i class="fas fa-id-card-alt"></i> 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入</span>
+                                    </div>
+                                    <div class="alert alert-danger stu-in">
+                                        <i class="fas fa-id-card-alt"></i> 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
