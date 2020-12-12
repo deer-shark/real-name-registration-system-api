@@ -59,6 +59,7 @@
                     <div class="dropdown-menu" aria-labelledby="A4">
                         <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> 登入</a>
                         <a class="dropdown-item" href="{{ route('account') }}"><i class="far fa-user-circle"></i> 修改組織資料</a>
+                        <a class="dropdown-item" href="{{ route('account.pwd') }}"><i class="fas fa-key"></i> 修改登入密碼</a>
                         <a class="dropdown-item" href="{{ route('logout') }}">登出 <i class="fas fa-sign-out-alt"></i></a>
                     </div>
                 </li>
