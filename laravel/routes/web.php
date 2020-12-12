@@ -29,12 +29,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('ychs')->group(function ()
+Route::prefix('')->group(function ()
 {
     Route::get('user/{id}', function ($id) {
         return 'User '.$id;
     });
-    Route::prefix('entry')->group(function ()
+    Route::prefix('')->group(function ()
     {   
         //根目錄
         Route::view('/', 'covid.index')->name('home');
@@ -45,6 +45,8 @@ Route::prefix('ychs')->group(function ()
         {
             //一般填寫
             Route::view('/normal', 'covid.frontend.forms.public.basicform')->name('basicform');
+            //一般填寫(KSHS)
+            Route::view('/normal/kshs', 'covid.frontend.forms.public.basicform-kshs');
             //一般填寫query識別證
             Route::view('/normal/query', 'covid.frontend.forms.public.query-card')->name('query');
             //一般填寫識別證畫面
@@ -86,6 +88,8 @@ Route::prefix('ychs')->group(function ()
             {
                 //個資修改
                 Route::view('/account', 'covid.frontend.dashboard.account.basicdata')->name('account');
+                //密碼修改
+                Route::view('/password', 'covid.frontend.dashboard.account.pwd')->name('account.pwd');
 
                 //Data
                 Route::prefix('data')->group(function ()
