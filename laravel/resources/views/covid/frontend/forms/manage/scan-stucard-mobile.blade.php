@@ -5,7 +5,9 @@
     @section('dashboard')
         <div class="container ct-s">
             <div class="row">
-                {camera}
+                <div class="camera">
+                    @include('covid.frontend.api.instacam')
+                </div>
             </div>
             <div class="row">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkbb">
