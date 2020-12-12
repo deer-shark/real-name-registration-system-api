@@ -1,6 +1,6 @@
 @extends('covid.frontend.layouts.dashboard.master')
 @extends('covid.frontend.layouts.master')
-@section('title', '現場掃入QR ID')
+@section('title', '現場掃入QR ID KSHS')
 @section('content')
     @section('dashboard')
     {{--
@@ -58,7 +58,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="identify"><i class="fas fa-camera"></i> Scaner</label>
-                                    <div>{ camera }<br>{ camera }<br>{ camera }<br>{ camera }<br></div>
+                                    <div class="camera">
+                                        @include('covid.frontend.api.instacam')
+                                    </div>
                                 </div>
                             </div>
                         </div>
