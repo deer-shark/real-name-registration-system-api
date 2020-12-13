@@ -17,6 +17,7 @@
             return response.json()
         }).then(result => {
             $("#recently").prepend('<div class="alert alert-danger stu-in"><i class="fas fa-id-card-alt"></i> 測試用 <span class="text-dark">已在 20201105 19:30:31 刷入</span></div>');
+            $("#stu.name").replaceWith(content)
             // $('#result')[0].value = JSON.stringify(result);
             
             // alert(`ID: ${result.id}／檢驗項目：${result.code.coding[0].display}／檢驗值：${result.valueQuantity.value} ${result.valueQuantity.unit}`)

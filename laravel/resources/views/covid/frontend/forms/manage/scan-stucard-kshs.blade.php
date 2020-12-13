@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
-                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu.name">請先刷入進場QR Code</span></h1>
+                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu.name">請先將鏡頭對準 QR Code</span></h1>
                         <div class="row">
                             {{--
                             <div class="col-sm-4">
