@@ -37,17 +37,19 @@
                         <a class="dropdown-item" href="{{ route('live.scan.kshs') }}"><i class="fas fa-qrcode"></i> 掃入QR ID</a>
                     </div>
                 </li>
-                {{--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="A2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-cogs"></i> 填報管理
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A2">
                         <a class="dropdown-item" href="{{ route('data.manage') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
+                        {{--
                         <a class="dropdown-item" href="{{ route('data.export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>
                         <a class="dropdown-item" href="{{ route('data.import') }}"><i class="fas fa-cloud-upload-alt"></i> 匯入資料</a>
+                        --}}
                     </div>
                 </li>
+                {{--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="A4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-toggle-on"></i> 系統管理
@@ -64,7 +66,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A4">
                         <a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> 登入</a>
+                        {{--
                         <a class="dropdown-item" href="{{ route('account') }}"><i class="far fa-user-circle"></i> 修改組織資料</a>
+                        --}}
                         <a class="dropdown-item" href="{{ route('account.pwd') }}"><i class="fas fa-key"></i> 修改登入密碼</a>
                         <a class="dropdown-item" href="{{ route('logout') }}">登出 <i class="fas fa-sign-out-alt"></i></a>
                     </div>
