@@ -37,6 +37,7 @@
                         <a class="dropdown-item" href="{{ route('live.scan.kshs') }}"><i class="fas fa-qrcode"></i> 掃入QR ID</a>
                     </div>
                 </li>
+                {{--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="A2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-cogs"></i> 填報管理
@@ -56,6 +57,7 @@
                         <a class="dropdown-item" href="{{ route('setting.function') }}"><i class="fas fa-mouse-pointer"></i> 功能管理</a>
                     </div>
                 </li>
+                --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="A4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-alt"></i> 嗨！xx高中。
