@@ -1,6 +1,6 @@
 @extends('covid.frontend.layouts.dashboard.master')
 @extends('covid.frontend.layouts.master')
-@section('title', '現場掃入QR ID KSHS')
+@section('title', '現場掃入QR ID KSKG')
 @section('content')
     @section('dashboard')
     {{--
@@ -46,17 +46,32 @@
                                     <label for="time"><i class="far fa-clock"></i> 時間</label>
                                     <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動" disabled>
                                 </div>
+                            </div>
+                            <div class="col-sm">
                                 <div class="form-group">
                                     <label for="location"><i class="fas fa-location-arrow"></i> 地點</label>
                                     <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動" disabled>
                                 </div>
                             </div>
-                            <div class="col-sm">
-                                <div class="form-group">
+                        </div>
+                        {{--
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group stu-in">
                                     <label for="identify"><i class="fas fa-qrcode"></i> QR ID</label>
-                                    <input type="text" class="form-control" id="identify" placeholder="QR ID" required autofocus autocomplete="off" onMouseOver="this.select()">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="identify" placeholder="QR ID" required autofocus autocomplete="off" onMouseOver="this.select()">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit">送出填報 <i class="fab fa-telegram-plane"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
+                            </div>
+                        </div>
+                        --}}
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group stu-in">
                                     <label for="identify"><i class="fas fa-camera"></i> Scaner</label>
                                     <div class="camera">
                                         @include('covid.frontend.api.instacam')
@@ -69,25 +84,38 @@
                             <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
                             <textarea class="form-control is-invalid" id="note" placeholder="備註" ></textarea>
                         </div>
-                        --}}
                         <button type="submit" class="btn btn-lg btn-primary">送出填報 <i class="fab fa-telegram-plane"></i></button>
+                        --}}
                     </form>
+                    {{--
                     <hr>
                     <div class="container stu-in">
                         <div class="row">
                             <div class="alert alert-success stu-in">
                                 <i class="fas fa-id-card-alt"></i> 082152 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入</span>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="alert alert-danger stu-in">
                                 <i class="fas fa-id-card-alt"></i> 081085 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入</span>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    --}}
                 </div>
                 <div class="col-sm-6">
                     <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
                         <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> 082152 陳芳同</h1>
                         <div class="row">
+                            {{--
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label><i class="far fa-user"></i> 學生照片</label>
@@ -104,7 +132,25 @@
                                     </div>
                                 </div>
                             </div>
+                            --}}
+                            {{--
                             <div class="col-sm-8">
+                            --}}
+                            <div class="col stu-in">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="class"><i class="far fa-map"></i> 學號</label>
+                                            <input type="text" class="form-control" id="class" placeholder="班級" required autocomplete="off" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="seat"><i class="fas fa-chair"></i> 姓名</label>
+                                            <input type="text" class="form-control" id="seat" placeholder="座號" required autocomplete="off" disabled>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
@@ -121,6 +167,7 @@
                                 </div>
                                 <div class="row">
                                 </div>
+                                {{--
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
@@ -133,6 +180,7 @@
                                     <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
                                     <textarea class="form-control is-invalid" id="note" placeholder="備註" disabled ></textarea>
                                 </div>
+                                --}}
                             </div>
                         </div>
 

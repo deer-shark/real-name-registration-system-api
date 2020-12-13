@@ -1,5 +1,5 @@
 @extends('covid.frontend.layouts.master')
-@section('title', '一般身分填報 KSHS')
+@section('title', '一般身分填報 KSKG')
 @section('content')
 <div class="container ct-s">
     <h3 class="data-h3">@yield('title')</h3>
@@ -22,8 +22,8 @@
             <div class="col-sm">
                 <div class="form-group">
                     <label for="school"><i class="fas fa-school"></i> 學校</label>
-                    <select id="school" class="form-control">
-                        <option disabled selected>請選擇學校</option>
+                    <select id="school" class="form-control" required autocomplete="off">
+                        <option value="" disabled selected>請選擇學校</option>
                         <option value="kshs">雄中 KSHS</option>
                         <option value="kghs">雄女 KGHS</option>
                     </select>
