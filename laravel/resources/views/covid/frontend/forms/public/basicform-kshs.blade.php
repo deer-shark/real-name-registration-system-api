@@ -32,7 +32,7 @@
             <div class="col-sm">
                 <div class="form-group">
                     <label for="identify"><i class="far fa-id-card"></i> 學號</label>
-                    <input type="text" class="form-control" id="identify" placeholder="身分證字號" required autocomplete="off">
+                    <input type="text" class="form-control" id="identify" placeholder="學號" required autocomplete="off">
                 </div>
             </div>
         </div>
@@ -40,14 +40,14 @@
         <div class="row">
             <div class="col-sm">
                 <div class="form-group">
-                    <label for="phone"><i class="fas fa-mobile-alt"></i> 班級</label>
-                    <input type="text" class="form-control" id="phone" placeholder="聯絡電話" required autocomplete="off">
+                    <label for="phone"><i class="far fa-map"></i> 班級</label>
+                    <input type="text" class="form-control" id="phone" placeholder="班級" required autocomplete="off">
                 </div>
             </div>
             <div class="col-sm">
                 <div class="form-group">
-                    <label for="phone"><i class="fas fa-mobile-alt"></i> 座號</label>
-                    <input type="text" class="form-control" id="phone" placeholder="聯絡電話" required autocomplete="off">
+                    <label for="phone"><i class="fas fa-chair"></i> 座號</label>
+                    <input type="text" class="form-control" id="phone" placeholder="座號" required autocomplete="off">
                 </div>
             </div>
             <div class="col-sm">

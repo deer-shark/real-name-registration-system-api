@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
-                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> 082152 陳芳同</h1>
+                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu.name">請先將鏡頭對準 QR Code</span></h1>
                         <div class="row">
                             {{--
                             <div class="col-sm-4">
@@ -137,6 +137,7 @@
                             <div class="col-sm-8">
                             --}}
                             <div class="col stu-in">
+                                {{--
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
@@ -151,21 +152,25 @@
                                         </div>
                                     </div>
                                 </div>
+                                --}}
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="class"><i class="far fa-map"></i> 班級</label>
-                                            <input type="text" class="form-control" id="class" placeholder="班級" required autocomplete="off" disabled>
+                                            <input type="text" class="form-control" id="stu.class" placeholder="班級" required autocomplete="off" disabled>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="seat"><i class="fas fa-chair"></i> 座號</label>
-                                            <input type="text" class="form-control" id="seat" placeholder="座號" required autocomplete="off" disabled>
+                                            <input type="text" class="form-control" id="stu.seat" placeholder="座號" required autocomplete="off" disabled>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col">
+                                        <a class="btn btn-danger stu-in">駁回簽到</a>
+                                    </div>
                                 </div>
                                 {{--
                                 <div class="row">

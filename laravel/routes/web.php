@@ -46,7 +46,7 @@ Route::prefix('kskg')->group(function ()
             //一般填寫
             Route::view('/normal', 'covid.frontend.forms.public.basicform')->name('basicform');
             //一般填寫(KSHS)
-            Route::view('/normal/kskg', 'covid.frontend.forms.public.basicform-kshs');
+            Route::view('/normal/kskg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
             //一般填寫query識別證
             Route::view('/normal/query', 'covid.frontend.forms.public.query-card')->name('query');
             //一般填寫識別證畫面
@@ -61,8 +61,6 @@ Route::prefix('kskg')->group(function ()
             Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard')->name('live.scan');
             //入口掃入QR ID(KSHS)
             Route::view('/scan/kskg', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
-            //入口掃入學生證-手機板
-            Route::view('/scan/m', 'covid.frontend.forms.manage.scan-stucard-mobile')->name('live.scan.mobile');
         });
 
         //系統管理
