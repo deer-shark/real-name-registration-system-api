@@ -30,3 +30,29 @@ Route::group([
     Route::delete('/token', 'AuthController@logout');
     Route::get('/user', 'AuthController@me');
 });
+
+Route::group([
+    'prefix' => '/register'
+], function ($router) {
+    Route::get('/', 'RegisterController@getAll');
+    Route::get('/school/{school}', 'RegisterController@getBySchool');
+    Route::get('/school/{school}/student/{student_id}', 'RegisterController@getByStudent');
+    Route::get('/school/{school}/class/{class}', 'RegisterController@getByClass');
+    Route::get('/hash/{hash}', 'RegisterController@getByHash');
+    Route::post('/', 'RegisterController@new');
+    Route::delete('/school/{school}/student/{student_id}', 'RegisterController@deleteByStudent');
+    Route::delete('/hash/{hash}', 'RegisterController@deleteByHash');
+});
+
+Route::group([
+    'prefix' => '/admission'
+], function ($router) {
+    Route::get('/', 'AdmissionController@getAll');
+    Route::get('/school/{school}', 'AdmissionController@getBySchool');
+    Route::get('/school/{school}/student/{student_id}', 'AdmissionController@getByStudent');
+    Route::get('/school/{school}/class/{class}', 'AdmissionController@getByClass');
+    Route::get('/hash/{hash}', 'AdmissionController@getByHash');
+    Route::post('/', 'AdmissionController@new');
+    Route::delete('/{history_id}', 'AdmissionController@deleteByHistoryId');
+});
+
