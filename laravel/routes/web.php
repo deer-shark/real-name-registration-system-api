@@ -27,15 +27,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('covid.frontend.dashboard.index');
 // })->name('dashboard');
 
-
-
-Route::prefix('kskg')->group(function ()
-{
-    Route::get('user/{id}', function ($id) {
-        return 'User '.$id;
-    });
-    Route::prefix('xams20')->group(function ()
-    {   
+Route::prefix('dev')->group(function (){
+    Route::prefix('dev')->group(function (){
         //根目錄
         Route::view('/', 'covid.index')->name('home');
         Route::view('/comingsoon', 'covid.frontend.comingsoon.index');
@@ -141,6 +134,49 @@ Route::prefix('kskg')->group(function ()
         {
             Route::view('/bc', 'covid.frontend.api.bc39')->name('bc');
         });
+    });
+});
+
+
+
+Route::prefix('kskg')->group(function ()
+{
+    Route::prefix('xams20')->group(function ()
+    {   
+        //根目錄
+        Route::view('/', 'covid.index')->name('home');
+        
+        //資料填報表單
+        Route::prefix('forms')->group(function ()
+        {
+            //一般填寫(KSHS)
+            Route::view('/normal/kskg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
+            //入口掃入QR ID(KSHS)
+            Route::view('/scan/kskg', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
+        });
+
+        //帳號管理端
+        Route::prefix('dashboard')->group(function ()
+        {
+            Route::get('/', function () {
+                return view('covid.frontend.dashboard.index');
+            })->name('dashboard');
+            Route::view('/login', 'covid.frontend.dashboard.account.login')->name('login');
+
+            //Manage資料
+            Route::prefix('manage')->group(function ()
+            {
+                //密碼修改
+                Route::view('/password', 'covid.frontend.dashboard.account.pwd')->name('account.pwd');
+
+                //Data
+                Route::prefix('data')->group(function ()
+                {
+                    Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data.manage');
+                });
+            });
+        });
+
     });
 });
 

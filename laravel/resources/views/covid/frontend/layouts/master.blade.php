@@ -11,10 +11,11 @@
     <link href="{{ asset('covid19/resources/main/bsstyle.css') }}" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js"></script>
+    {{-- <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" type="text/javascript"></script> --}}
+    <script src="{{ asset('covid19/resources/main/js/instascan.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/js/jquery.cookie.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/js/jquery.barcode.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/js/jquery.qrcode.js') }}" type="text/javascript"></script>

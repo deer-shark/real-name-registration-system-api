@@ -1,3 +1,5 @@
+var history_last={};
+
 // 右上角小小提示
 const Toast = Swal.mixin({
     toast: true,
@@ -25,7 +27,6 @@ function contact() {
 
 // Resgister
 $('#form-register').submit(function(){
-    alert('Sent');
     var m_school=$('#form-register-school').val();
     var m_studentid=$('#form-register-studentid').val();
     var m_class=$('#form-register-class').val();
@@ -43,16 +44,24 @@ $('#form-register').submit(function(){
         var res=request('POST', '/register', data);
         if (res.code == 201) {
             Swal.fire({
-                title: 'Sweet!',
-                text: 'Modal with a custom image.',
-                imageUrl: 'https://unsplash.it/400/200',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
-            })
+                title: '填報完成！',
+                html: '<div id="qrcode" class="d-flex justify-content-center"></div>',
+                footer: '請妥善保存您的 QR Code 以供入場查驗用。',
+                keydownListenerCapture: true
+            });
+            $('#qrcode').qrcode({
+                render: 'table',
+                colorDark : "#000000",
+                colorLight : "rgba(0,0,0,0)",
+                text: res.data.hash
+            });
+            
         }
     }else{
-        // TODO 資料不完整
+        Toast.fire({
+            icon: 'error',
+            title: '尚有欄位未填寫，請再次確認'
+        });
     }
     return false;
 });
@@ -61,7 +70,7 @@ $('#form-register').submit(function(){
 $('#form-login').submit(function(){
     var input_acc = $('#form-login-account').val();
     var input_pw = $('#form-login-password').val();
-    if (input_acc == null || input_pw == null) {
+    if (input_acc == '' || input_pw == '') {
         Toast.fire({
             icon: 'error',
             title: '帳號或密碼空白，請重新輸入'
@@ -123,4 +132,29 @@ function Logout() {
     }
 }
 
-// Instascan
+$('#reject-btn').click(function(){
+    console.log("A");
+    if(history_last=={})
+        return false;
+    Swal.fire({
+        title: '確定撤回簽到紀錄嗎？',
+        text: "如果掃到非外校生的QR Code，請直接撤回。<br>目前正在撤回"+ history_last.guest.student_id+' '+history_last.guest.name +"的紀錄",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var res=request('DELETE','/admission/'+history_last.id);
+            if(res.code==204){
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                );
+            }
+        }
+    });
+    return false;
+});
