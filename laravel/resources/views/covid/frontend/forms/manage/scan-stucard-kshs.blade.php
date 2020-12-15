@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <a class="btn btn-danger stu-in">駁回簽到</a>
+                                        <a class="btn btn-danger stu-in" onclick="Reject()">駁回簽到</a>
                                     </div>
                                 </div>
                                 {{--
