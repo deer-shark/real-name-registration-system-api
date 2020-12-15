@@ -119,7 +119,6 @@ class AdmissionController extends Controller
     public function new(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'school' => ['required', 'string'],
             'hash' => ['required', 'string'],
         ]);
         if ($validator->fails())
