@@ -52,6 +52,7 @@ Route::group([
     Route::get('/school/{school}/student/{student_id}', 'AdmissionController@getByStudent');
     Route::get('/school/{school}/class/{class}', 'AdmissionController@getByClass');
     Route::get('/hash/{hash}', 'AdmissionController@getByHash');
+    Route::get('/operator/{operator_id}', 'AdmissionController@getByOperator');
     Route::post('/', 'AdmissionController@new');
     Route::delete('/{history_id}', 'AdmissionController@deleteByHistoryId');
 });
