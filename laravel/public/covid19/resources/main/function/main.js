@@ -141,7 +141,7 @@ scanner.addListener('scan', function (content) {
         function Reject() {
             Swal.fire({
                 title: '確定撤回簽到紀錄嗎？',
-                text: "如果掃到非外校生的QR Code，請直接撤回。<br>目前正在撤回"+ guest.student_id+' '+guest.name +"的紀錄",
+                text: "如果掃到非外校生的QR Code，請直接撤回。<br>目前正在撤回的紀錄",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
