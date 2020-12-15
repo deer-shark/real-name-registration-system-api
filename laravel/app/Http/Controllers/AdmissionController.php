@@ -134,7 +134,9 @@ class AdmissionController extends Controller
 
     public function deleteByHistoryId(Request $request, $school, $student_id)
     {
-        return response()->json();
+        if ($this->guest->where('hash', $hash)->delete() == 0)
+            return response()->json(['error' => 'History Not Found'], Response::HTTP_NOT_FOUND);
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 
 }
