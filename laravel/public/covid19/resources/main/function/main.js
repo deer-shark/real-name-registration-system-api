@@ -124,7 +124,6 @@ function Logout() {
 }
 
 // Instascan
-let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
 scanner.addListener('scan', function (content) {
     var res = request('GET',`/register/hash/${content}`);
     if(res.code==200){
