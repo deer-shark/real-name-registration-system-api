@@ -46,7 +46,7 @@ $('#form-register').submit(function(){
             Swal.fire({
                 title: '填報完成！',
                 html: '<div id="qrcode" class="d-flex justify-content-center"></div>',
-                footer: '請妥善保存您的 QR Code 以供入場查驗用。',
+                footer: '<ol><li>請妥善保存您的 QR Code 以供入場查驗用。</li></ol>',
                 keydownListenerCapture: true
             });
             $('#qrcode').qrcode({
