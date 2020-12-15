@@ -27,20 +27,20 @@
 </style>
 <div class="container">
     <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form id="form-login">
         <h2 class="text-center data-h3">管理登入</h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="管理帳號" required="required">
+            <input type="text" class="form-control" placeholder="管理帳號" id="form-login-account">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="管理密碼" required="required">
+            <input type="password" class="form-control" placeholder="管理密碼" id="form-login-password">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">登入</button>
         </div>
         <div class="clearfix">
             {{--  <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>  --}}
-            <a  href="javascript:void(0)" onclick="alert('請聯絡xx高中xx負責人');" class="float-right">忘記密碼</a>
+            <a  href="javascript:void(0)" onclick="contact()" class="float-right">忘記密碼</a>
         </div>        
     </form>
     {{--  <p class="text-center"><a href="#">Create an Account</a></p>  --}}
