@@ -4,7 +4,8 @@
 @section('content')
     @section('dashboard')
         <div class="container ct-s">
-            <table class="table">
+            <table id="table_register"></table>
+            {{-- <table class="table">
                 <thead class="thead-light">
                     <tr>
                     <th scope="col">#</th>
@@ -33,14 +34,21 @@
                     <td>@twitter</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> --}}
         </div>
+        <script>
+            $(document).ready(function (){
+                getRegisterList().then(data => {
+                    $('#table_register').bootstrapTable('load', data);
+                });
+            })
+        </script>
         <button onclick='alertTest()'>Alert</button>
     <button onclick='confirmTest()'>Confirm</button>
     <script>
         function alertTest() {
             Swal.fire(
-                "查詢作業失敗", //標題 
+                "查詢作業失敗", //標題
                 "您所輸入的序號不存在或是系統被玩壞了!", //訊息內容(可省略)
                 "error" //圖示(可省略) success/info/warning/error/question
                 //圖示範例：https://sweetalert2.github.io/#icons

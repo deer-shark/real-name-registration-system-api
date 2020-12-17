@@ -4,6 +4,7 @@ var history_last = {};
 // 初始化
 function init() {
     console.log('initialize');
+    tableInitialize();
     formListener();
     buttonListener();
 }
@@ -22,6 +23,103 @@ const Toast = Swal.mixin({
     }
 });
 
+function tableInitialize() {
+    $('#table_register').bootstrapTable({
+        dataType: "json",
+        classes: "table table-bordered table-striped table-sm",
+        striped: true,
+        pagination: true,
+        sortable: true,
+        uniqueId: 'id',
+        sortName: 'id',
+        pageNumber: 1,
+        pageSize: 10,
+        search: true,
+        showPaginationSwitch: true,
+        columns: [{
+            field: 'id',
+            title: 'ID',
+        }, {
+            field: 'school',
+            title: '學校'
+        }, {
+            field: 'student_id',
+            title: '學號'
+        }, {
+            field: 'class',
+            title: '班級'
+        }, {
+            field: 'seat',
+            title: '座號'
+        }, {
+            field: 'name',
+            title: '姓名'
+        }, {
+            field: 'created_at',
+            title: '填報時間'
+        }, {
+            field: 'qrcode',
+            title: 'QR Code',
+            width: 70,
+            formatter: '<button id="btn_register_qrcode" class="btn btn-info">Show</button>',
+            events: operateEvents
+        }, {
+            field: 'delete',
+            title: '刪除',
+            width: 70,
+            formatter: '<button id="btn_register_delete" class="btn btn-danger">刪除</button>',
+            events: operateEvents
+        }]
+    });
+}
+
+window.operateEvents = {
+    // e      Event
+    // value  undefined
+    // row    rowdata
+    // index  row
+    'click #btn_register_delete': function (e, value, row, index) {
+        $.confirm({
+            title: '確認刪除!!',
+            content: '即將刪除訂單',
+            type: 'red',
+            autoClose: 'cancel|10000',
+            buttons: {
+                confirm: {
+                    text: '刪除',
+                    btnClass: 'btn-blue',
+                    action: function () {
+                        HideAlert();
+                        var res = request('DELETE', '/order/' + row['order_id'], null);
+                        if (res.code == 200) {
+                            $.alert({
+                                title: '成功',
+                                content: '<b>刪除成功</b><br>' + res.data['before'] + '-' + res.data['total'] + '=' + res.data['after'],
+                                type: 'green',
+                                typeAnimated: true
+                            });
+
+                            orderDisplay($('#order_info_date').val());
+                        }
+                        if (res.code == 400) {
+                            if (res.data['error'] == 'Sales time has passed') {
+                                $.alert({
+                                    title: '錯誤',
+                                    content: '已超過刪除期限!!',
+                                    type: 'red',
+                                    typeAnimated: true
+                                });
+                            }
+                        }
+                    }
+                },
+                cancel: {
+                    text: '取消'
+                },
+            }
+        });
+    },
+};
 
 // Help
 function contact() {
@@ -171,5 +269,11 @@ function Logout() {
         });
     }
 }
+
+async function getRegisterList() {
+    var res = request('GET', '/register');
+    return res.data;
+}
+
 
 
