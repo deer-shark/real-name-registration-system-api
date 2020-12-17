@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -25,7 +24,7 @@
     <script src="{{ asset('covid19/resources/main/function/api.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/function/config.js') }}" type="text/javascript"></script>
     <script src="{{ asset('covid19/resources/main/function/main.js') }}" type="text/javascript"></script>
-    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:locale" content="zh_TW"/>
     <meta http-equiv="pragma" content="no-cache">
     <meta name="author" content="">
     <meta name="robots" content="noindex,nofollow">
@@ -36,19 +35,20 @@
     <link rel="icon" type="image/png" sizes="192x192" href="https://img.imych.one/me/images/youu.png">
     <style>
         section.header .banner {
-            /* background:url("{{ asset('covid19/resources/main/images/DSC_3242.jpg') }}") gray no-repeat center; */
+            /* background:url("
+        {{ asset('covid19/resources/main/images/DSC_3242.jpg') }} ") gray no-repeat center; */
             /* background-size: cover; */
             /* filter: blur(4px); */
         }
     </style>
     <script>
-    var config;
+        var config;
         $.ajax({
             url: "{{ asset('covid19/resources/main/function/config.json') }}",
             type: "POST",
             async: false,
             success: function (msg) {
-                config=msg;
+                config = msg;
             },
             error: function (xhr) {
                 console.log('ajax er');
@@ -66,18 +66,18 @@
 </head>
 
 <body>
-    @include('covid.frontend.layouts.header')
-    <div class="ct">
-        @yield('content')
-    </div>
-    @include('covid.frontend.layouts.footer')
+@include('covid.frontend.layouts.header')
+<div class="ct">
+    @yield('content')
+</div>
+@include('covid.frontend.layouts.footer')
 </body>
-      <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-      <script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            init();
-        });
-    </script>
+<script>
+    $(document).ready(function () {
+        init();
+    });
+</script>
 </html>

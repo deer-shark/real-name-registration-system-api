@@ -2,7 +2,7 @@
 @extends('covid.frontend.layouts.master')
 @section('title', '現場掃入QR ID KSKG')
 @section('content')
-    @section('dashboard')
+@section('dashboard')
     {{--
     <video id="preview"></video>
     <!-- 詢問是否允許開啟相機後，會顯示在這個元素裡 -->
@@ -36,163 +36,168 @@
     });
     </script>
     --}}
-        <div class="container ct-s">
-            <div class="row">
-                <div class="col-sm-6">
-                    <form action="{{ route('post.form.stu-card') }}" method="POST" class="stu-in">
-                        <div class="row">
-                            <div class="col-sm">
-                                <div class="form-group">
-                                    <label for="time"><i class="far fa-clock"></i> 時間</label>
-                                    <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動" disabled>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <div class="form-group">
-                                    <label for="location"><i class="fas fa-location-arrow"></i> 地點</label>
-                                    <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動" disabled>
-                                </div>
+    <div class="container ct-s">
+        <div class="row">
+            <div class="col-sm-6">
+                <form action="{{ route('post.form.stu-card') }}" method="POST" class="stu-in">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="time"><i class="far fa-clock"></i> 時間</label>
+                                <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動"
+                                       disabled>
                             </div>
                         </div>
-                        {{--
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group stu-in">
-                                    <label for="identify"><i class="fas fa-qrcode"></i> QR ID</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="identify" placeholder="QR ID" required autofocus autocomplete="off" onMouseOver="this.select()">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit">送出填報 <i class="fab fa-telegram-plane"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="location"><i class="fas fa-location-arrow"></i> 地點</label>
+                                <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動"
+                                       disabled>
                             </div>
                         </div>
-                        --}}
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group stu-in">
-                                    <label for="identify"><i class="fas fa-camera"></i> Scaner</label>
-                                    <div class="camera">
-                                        @include('covid.frontend.api.instacam')
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{--
-                        <div class="form-group">
-                            <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
-                            <textarea class="form-control is-invalid" id="note" placeholder="備註" ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-primary">送出填報 <i class="fab fa-telegram-plane"></i></button>
-                        --}}
-                    </form>
+                    </div>
                     {{--
-                    <hr>
-                    <div class="container stu-in">
-                        <div class="row">
-                            <div class="alert alert-success stu-in">
-                                <i class="fas fa-id-card-alt"></i> 082152 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入</span>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="alert alert-danger stu-in">
-                                <i class="fas fa-id-card-alt"></i> 081085 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入</span>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group stu-in">
+                                <label for="identify"><i class="fas fa-qrcode"></i> QR ID</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="identify" placeholder="QR ID" required autofocus autocomplete="off" onMouseOver="this.select()">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">送出填報 <i class="fab fa-telegram-plane"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     --}}
-                </div>
-                <div class="col-sm-6">
-                    <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
-                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu-name">請先將鏡頭對準 QR Code</span></h1>
-                        <div class="row">
-                            {{--
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label><i class="far fa-user"></i> 學生照片</label>
-                                    <div class="d-flex justify-content-center">
-                                        <img src="{{ asset('covid19/resources/main/images/avr-dafault.png') }}" class="img-fluid">
-                                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group stu-in">
+                                <label for="identify"><i class="fas fa-camera"></i> Scaner</label>
+                                <div class="camera">
+                                    @include('covid.frontend.api.instacam')
                                 </div>
-                                <div class="form-group">
-                                    <label><i class="fas fa-barcode"></i> 學生證條碼</label>
-                                    <div class="d-flex justify-content-center">
-                                        <div class="form-group">
-                                            <span class="barcode">082152</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            --}}
-                            {{--
-                            <div class="col-sm-8">
-                            --}}
-                            <div class="col stu-in">
-                                {{--
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="class"><i class="far fa-map"></i> 學號</label>
-                                            <input type="text" class="form-control" id="class" placeholder="班級" required autocomplete="off" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="seat"><i class="fas fa-chair"></i> 姓名</label>
-                                            <input type="text" class="form-control" id="seat" placeholder="座號" required autocomplete="off" disabled>
-                                        </div>
-                                    </div>
-                                </div>
-                                --}}
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="class"><i class="far fa-map"></i> 班級</label>
-                                            <input type="text" class="form-control" id="stu-class" placeholder="班級" required autocomplete="off" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="seat"><i class="fas fa-chair"></i> 座號</label>
-                                            <input type="text" class="form-control" id="stu-seat" placeholder="座號" required autocomplete="off" disabled>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <a class="btn btn-danger stu-in" id="reject-btn">駁回簽到</a>
-                                    </div>
-                                </div>
-                                {{--
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="temperature"><i class="fas fa-thermometer-half"></i> 體溫</label>
-                                            <input type="text" class="form-control" id="temperature" placeholder="體溫" autocomplete="off" disabled>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
-                                    <textarea class="form-control is-invalid" id="note" placeholder="備註" disabled ></textarea>
-                                </div>
-                                --}}
                             </div>
                         </div>
-
-                        
                     </div>
+                    {{--
+                    <div class="form-group">
+                        <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
+                        <textarea class="form-control is-invalid" id="note" placeholder="備註" ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary">送出填報 <i class="fab fa-telegram-plane"></i></button>
+                    --}}
+                </form>
+                {{--
+                <hr>
+                <div class="container stu-in">
+                    <div class="row">
+                        <div class="alert alert-success stu-in">
+                            <i class="fas fa-id-card-alt"></i> 082152 陳芳同 <span class="text-dark">已在 20201105 19:32:59 刷入</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger stu-in">
+                            <i class="fas fa-id-card-alt"></i> 081085 高勇成 <span class="text-dark">已在 20201105 19:30:31 刷入</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                --}}
+            </div>
+            <div class="col-sm-6">
+                <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
+                    <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu-name">請先將鏡頭對準 QR Code</span>
+                    </h1>
+                    <div class="row">
+                        {{--
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label><i class="far fa-user"></i> 學生照片</label>
+                                <div class="d-flex justify-content-center">
+                                    <img src="{{ asset('covid19/resources/main/images/avr-dafault.png') }}" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-barcode"></i> 學生證條碼</label>
+                                <div class="d-flex justify-content-center">
+                                    <div class="form-group">
+                                        <span class="barcode">082152</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        --}}
+                        {{--
+                        <div class="col-sm-8">
+                        --}}
+                        <div class="col stu-in">
+                            {{--
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="class"><i class="far fa-map"></i> 學號</label>
+                                        <input type="text" class="form-control" id="class" placeholder="班級" required autocomplete="off" disabled>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="seat"><i class="fas fa-chair"></i> 姓名</label>
+                                        <input type="text" class="form-control" id="seat" placeholder="座號" required autocomplete="off" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            --}}
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="class"><i class="far fa-map"></i> 班級</label>
+                                        <input type="text" class="form-control" id="stu-class" placeholder="班級" required
+                                               autocomplete="off" disabled>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="seat"><i class="fas fa-chair"></i> 座號</label>
+                                        <input type="text" class="form-control" id="stu-seat" placeholder="座號" required
+                                               autocomplete="off" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a class="btn btn-danger stu-in" id="reject-btn">駁回簽到</a>
+                                </div>
+                            </div>
+                            {{--
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="temperature"><i class="fas fa-thermometer-half"></i> 體溫</label>
+                                        <input type="text" class="form-control" id="temperature" placeholder="體溫" autocomplete="off" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="note"><i class="far fa-sticky-note"></i> 備註</label>
+                                <textarea class="form-control is-invalid" id="note" placeholder="備註" disabled ></textarea>
+                            </div>
+                            --}}
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection
 @endsection

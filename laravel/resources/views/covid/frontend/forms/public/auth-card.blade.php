@@ -1,11 +1,11 @@
 @extends('covid.frontend.layouts.master')
 @section('title', '一般填報認證畫面')
 @section('content')
-<div class="container">
-    <main role="main" class="container">
-        <div class="jumbotron">
-            <h1 class="data-h3"><i class="far fa-id-badge"></i> xxx活動通行證</h1>
-            {{--  <p class="lead d-flex justify-content-center">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>  --}}
+    <div class="container">
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h1 class="data-h3"><i class="far fa-id-badge"></i> xxx活動通行證</h1>
+                {{--  <p class="lead d-flex justify-content-center">抵達活動現場時，請出示本通行證及相關證件，以利工作人員查驗。</p>  --}}
                 {{-- <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -65,29 +65,29 @@
                     <div class="col">
                         <div class="form-group">
                             {{-- <label for="location"><i class="fas fa-qrcode"></i> 掃掃條碼</label><br> --}}
-                            <div id="qrcode" class="d-flex justify-content-center"></div> 
+                            <div id="qrcode" class="d-flex justify-content-center"></div>
                         </div>
                     </div>
                 </div>
-            <p class="lead d-flex justify-content-center">請妥善保存您的 QR Code 以供入場查驗用。</p>
-            
-<script> 
-//table 模式相容 IE低版本 
-$('#qrcode').qrcode({
-    render: 'table',
-    colorDark : "#000000",
-    colorLight : "rgba(0,0,0,0)",
-    text: 'http://www.google.com'
-});
-JsBarcode("#barcode", "Hi world!",{
-    background: "rgba(0,0,0,0)",
-    lineColor: "#000000",
-});
-</script> 
+                <p class="lead d-flex justify-content-center">請妥善保存您的 QR Code 以供入場查驗用。</p>
 
-                </div>
-                
-        </div>
+                <script>
+                    //table 模式相容 IE低版本
+                    $('#qrcode').qrcode({
+                        render: 'table',
+                        colorDark: "#000000",
+                        colorLight: "rgba(0,0,0,0)",
+                        text: 'http://www.google.com'
+                    });
+                    JsBarcode("#barcode", "Hi world!", {
+                        background: "rgba(0,0,0,0)",
+                        lineColor: "#000000",
+                    });
+                </script>
+
+            </div>
+
+    </div>
     </main>
-</div>
+    </div>
 @endsection

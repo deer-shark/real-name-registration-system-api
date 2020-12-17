@@ -16,7 +16,7 @@ class RegisterController extends Controller
 
     public function __construct(Guest $guest)
     {
-        $this->middleware('auth:api',['except' => ['new']]);
+        $this->middleware('auth:api', ['except' => ['new']]);
 
         $this->guest = $guest;
     }

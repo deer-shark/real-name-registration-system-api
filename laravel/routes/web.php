@@ -27,15 +27,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('covid.frontend.dashboard.index');
 // })->name('dashboard');
 
-Route::prefix('dev')->group(function (){
-    Route::prefix('dev')->group(function (){
+Route::prefix('dev')->group(function () {
+    Route::prefix('dev')->group(function () {
         //根目錄
         Route::view('/', 'covid.index')->name('home');
         Route::view('/comingsoon', 'covid.frontend.comingsoon.index');
-        
+
         //資料填報表單
-        Route::prefix('forms')->group(function ()
-        {
+        Route::prefix('forms')->group(function () {
             //一般填寫
             Route::view('/normal', 'covid.frontend.forms.public.basicform')->name('basicform');
             //一般填寫(KSHS)
@@ -57,8 +56,7 @@ Route::prefix('dev')->group(function (){
         });
 
         //系統管理
-        Route::prefix('setting')->group(function ()
-        {
+        Route::prefix('setting')->group(function () {
             //活動管理
             Route::view('/events', 'covid.frontend.setting.events')->name('setting.events');
             //功能管理
@@ -66,8 +64,7 @@ Route::prefix('dev')->group(function (){
         });
 
         //帳號管理端
-        Route::prefix('dashboard')->group(function ()
-        {
+        Route::prefix('dashboard')->group(function () {
             Route::get('/', function () {
                 return view('covid.frontend.dashboard.index');
             })->name('dashboard');
@@ -75,16 +72,14 @@ Route::prefix('dev')->group(function (){
             Route::view('/logout', 'covid.frontend.dashboard.account.logout')->name('logout');
 
             //Manage資料
-            Route::prefix('manage')->group(function ()
-            {
+            Route::prefix('manage')->group(function () {
                 //個資修改
                 Route::view('/account', 'covid.frontend.dashboard.account.basicdata')->name('account');
                 //密碼修改
                 Route::view('/password', 'covid.frontend.dashboard.account.pwd')->name('account.pwd');
 
                 //Data
-                Route::prefix('data')->group(function ()
-                {
+                Route::prefix('data')->group(function () {
                     Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data.manage');
                     Route::view('/edit', 'covid.frontend.dashboard.manage.edit');
                     Route::view('/export', 'covid.frontend.dashboard.manage.export')->name('data.export');
@@ -94,18 +89,16 @@ Route::prefix('dev')->group(function (){
         });
 
         //Backend
-        Route::prefix('backend/post')->group(function ()
-        {
+        Route::prefix('backend/post')->group(function () {
             Route::view('/database', 'covid.backend.test.database');
-            
+
             //修改個人資料
             Route::post('/account', function () {
                 return view('covid.backend.sql.account.update');
             })->name('post.account');
-            
+
             //表單SQL位置
-            Route::prefix('forms')->group(function ()
-            {
+            Route::prefix('forms')->group(function () {
                 //一般填報
                 Route::post('/normal', function () {
                     return view('covid.backend.sql.forms.input_normal');
@@ -130,25 +123,20 @@ Route::prefix('dev')->group(function (){
         });
 
         //API
-        Route::prefix('api')->group(function ()
-        {
+        Route::prefix('api')->group(function () {
             Route::view('/bc', 'covid.frontend.api.bc39')->name('bc');
         });
     });
 });
 
 
-
-Route::prefix('kskg')->group(function ()
-{
-    Route::prefix('xams20')->group(function ()
-    {   
+Route::prefix('kskg')->group(function () {
+    Route::prefix('xams20')->group(function () {
         //根目錄
         Route::view('/', 'covid.index')->name('home');
-        
+
         //資料填報表單
-        Route::prefix('forms')->group(function ()
-        {
+        Route::prefix('forms')->group(function () {
             //一般填寫(KSHS)
             Route::view('/normal/kskg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
             //入口掃入QR ID(KSHS)
@@ -156,22 +144,19 @@ Route::prefix('kskg')->group(function ()
         });
 
         //帳號管理端
-        Route::prefix('dashboard')->group(function ()
-        {
+        Route::prefix('dashboard')->group(function () {
             Route::get('/', function () {
                 return view('covid.frontend.dashboard.index');
             })->name('dashboard');
             Route::view('/login', 'covid.frontend.dashboard.account.login')->name('login');
 
             //Manage資料
-            Route::prefix('manage')->group(function ()
-            {
+            Route::prefix('manage')->group(function () {
                 //密碼修改
                 Route::view('/password', 'covid.frontend.dashboard.account.pwd')->name('account.pwd');
 
                 //Data
-                Route::prefix('data')->group(function ()
-                {
+                Route::prefix('data')->group(function () {
                     Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data.manage');
                 });
             });

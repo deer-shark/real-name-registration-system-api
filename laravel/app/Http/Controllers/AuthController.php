@@ -35,7 +35,7 @@ class AuthController extends Controller
     {
         $credentials = request(['account', 'password']);
 
-        if (!$token = auth()->claims(['user' => $this->user->where('account',request()->input('account'))->first()])->attempt($credentials)) {
+        if (!$token = auth()->claims(['user' => $this->user->where('account', request()->input('account'))->first()])->attempt($credentials)) {
             return response()->json(['error' => 'Username or Password Error'], 401);
         }
 
