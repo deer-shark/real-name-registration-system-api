@@ -59,7 +59,7 @@ class RegisterController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'school' => ['required', 'string'],
-            'student_id' => ['required', 'integer'],
+            'student_id' => ['required', 'string'],
             'class' => ['required', 'integer'],
             'seat' => ['required', 'integer'],
             'name' => ['required', 'string'],

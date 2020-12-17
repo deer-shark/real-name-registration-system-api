@@ -126,15 +126,17 @@ class AdmissionController extends Controller
         $guest = $this->guest->where('hash', $request->input('hash'))->first();
         if ($guest == null)
             return response()->json(['error' => 'Hash Not Found'], Response::HTTP_NOT_FOUND);
+        if(count($this->history->where('guest_id',$guest['id'])->get())!=0)
+            return response()->json(['error' => 'Admission Repeatedly'], Response::HTTP_FORBIDDEN);
         $operator = $this->user->where('id', auth()->user()['id'])->first();
         $res = $this->history->create(['guest_id' => $guest['id'], 'operator_id' => $operator['id']]);
         $result = array_merge($res->only(['id']), array('guest' => $guest, 'operator' => $operator->only(['id', 'name', 'organize', 'role'])));;
         return response()->json($result, Response::HTTP_CREATED);
     }
 
-    public function deleteByHistoryId(Request $request, $school, $student_id)
+    public function deleteByHistoryId(Request $request, $history_id)
     {
-        if ($this->guest->where('hash', $hash)->delete() == 0)
+        if ($this->history->where('id', $history_id)->delete() == 0)
             return response()->json(['error' => 'History Not Found'], Response::HTTP_NOT_FOUND);
         return response()->json([], Response::HTTP_NO_CONTENT);
     }

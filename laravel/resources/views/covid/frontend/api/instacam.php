@@ -1,7 +1,7 @@
 <video id="preview" style="width:100%;height:50%;"></video>
 <!-- <textarea id="result" rows="4" cols="50"></textarea> -->
 <script type="text/javascript">
-    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') ,refractoryPeriod:1500});
+    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') ,refractoryPeriod:2000});
     scanner.addListener('scan', function (content) {
         var res = request('POST',`/admission`,{"hash":content});
         if(res.code==201){
