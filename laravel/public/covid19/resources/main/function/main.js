@@ -275,5 +275,3 @@ async function getRegisterList() {
     var res = request('GET', '/register');
     return res.data;
 }
-
-
