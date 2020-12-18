@@ -1,8 +1,6 @@
-@extends('covid.frontend.layouts.dashboard.master')
 @extends('covid.frontend.layouts.master')
-@section('title', '填報總覽')
+@section('title', '填報資料總覽')
 @section('content')
-@section('dashboard')
     <div class="container ct-s">
         <table id="table_register"></table>
         {{-- <table class="table">
@@ -43,5 +41,4 @@
             });
         })
     </script>
-@endsection
 @endsection

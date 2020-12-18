@@ -9,7 +9,7 @@
                     <div class="form-group">
                         <label for="form-register-time"><i class="far fa-clock"></i> 時間</label>
                         <input type="text" class="form-control disable" id="form-register-time"
-                               placeholder="系統自動填入，請勿更動" disabled value="">
+                               placeholder="系統自動填入，請勿更動" disabled value="2020/12/25">
                     </div>
                 </div>
                 <div class="col-sm">

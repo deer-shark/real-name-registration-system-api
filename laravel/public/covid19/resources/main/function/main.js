@@ -163,6 +163,12 @@ function formListener() {
                     colorLight: "rgba(0,0,0,0)",
                     text: res.data.hash
                 });
+            } else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: '填報資料有誤',
+                    text: '填報內容的格式可能有誤，請重新確認。'
+                });
             }
         } else {
             Toast.fire({
@@ -274,6 +280,11 @@ function Logout() {
 async function getRegisterList() {
     var res = request('GET', '/register');
     return res.data;
+}
+
+async function getAccountStatus() {
+    var res = request('GET', '/auth/user');
+    return false;
 }
 
 

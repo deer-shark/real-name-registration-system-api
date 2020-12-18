@@ -6,6 +6,7 @@
         var res = request('POST', `/admission`, {"hash": content});
         if (res.code == 201) {
             if (res.data.times > 1){
+                var guest = res.data.guest;
                 Swal.fire({
                     icon: 'error',
                     title: '重複刷入',
