@@ -151,17 +151,17 @@ function formListener() {
             };
             var res = request('POST', '/register', data);
             if (res.code == 201) {
-                $('#qrcode').qrcode({
-                    render: 'table',
-                    colorDark: "#000000",
-                    colorLight: "rgba(0,0,0,0)",
-                    text: res.data.hash
-                });
                 Swal.fire({
                     title: '填報完成！',
                     html: '<div id="qrcode" class="d-flex justify-content-center"></div>',
                     footer: '<ol><li>請妥善保存您的 QR Code 以供入場查驗用。</li></ol>',
                     keydownListenerCapture: true
+                });
+                $('#qrcode').qrcode({
+                    render: 'table',
+                    colorDark: "#000000",
+                    colorLight: "rgba(0,0,0,0)",
+                    text: res.data.hash
                 });
             }
         } else {
@@ -275,3 +275,5 @@ async function getRegisterList() {
     var res = request('GET', '/register');
     return res.data;
 }
+
+
