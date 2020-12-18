@@ -19,7 +19,11 @@ function request(httpMethod, route, dataObj, auth = true, progressBar = true) {
         }
     });
     if (Math.floor(responses.status / 100) == 5) {
-        alert("錯誤：系統發生錯誤!!請聯繫管理員");
+        Swal.fire({
+            icon: 'error',
+            title: '伺服器錯誤',
+            text: '系統發生錯誤!!請聯繫管理員'
+        });
         /*$.alert({
             title: '錯誤',
             content: '系統發生錯誤!!請聯繫管理員',
@@ -28,7 +32,11 @@ function request(httpMethod, route, dataObj, auth = true, progressBar = true) {
         });*/
     }
     if (responses.status == 401 && !(httpMethod == 'POST' && route == '/auth/token') && !(httpMethod == 'DELETE' && route.match('/auth/token/') != null)) {
-        alert("錯誤：使用者驗證錯誤!!請重新登入");
+        Swal.fire({
+            icon: 'error',
+            title: '使用者驗證錯誤',
+            text: '請重新登入'
+        });
         /*$.alert({
             title: '錯誤',
             content: '使用者驗證錯誤!!請重新登入',
@@ -43,7 +51,11 @@ function request(httpMethod, route, dataObj, auth = true, progressBar = true) {
         !(httpMethod == 'POST' && route == '/pswd/token') &&
         !(httpMethod == 'POST' && route == '/order')
     ) {
-        alert("錯誤：權限不足!!!");
+        Swal.fire({
+            icon: 'error',
+            title: '使用者驗證錯誤',
+            text: '權限不足'
+        });
         /*$.alert({
             title: '錯誤',
             content: '權限不足!!!',

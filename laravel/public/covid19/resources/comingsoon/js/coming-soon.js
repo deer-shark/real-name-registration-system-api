@@ -1,6 +1,6 @@
-(function($) {
-  "use strict"; // Start of use strict
+(function ($) {
+    "use strict"; // Start of use strict
 
-  // No JS
+    // No JS
 
 })(jQuery); // End of use strict

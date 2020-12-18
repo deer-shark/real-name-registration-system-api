@@ -23,6 +23,7 @@ const Toast = Swal.mixin({
     }
 });
 
+// 資料填報總覽
 function tableInitialize() {
     $('#table_register').bootstrapTable({
         dataType: "json",
@@ -156,13 +157,6 @@ function formListener() {
                     footer: '<ol><li>請妥善保存您的 QR Code 以供入場查驗用。</li></ol>',
                     keydownListenerCapture: true
                 });
-                $('#qrcode').qrcode({
-                    render: 'table',
-                    colorDark: "#000000",
-                    colorLight: "rgba(0,0,0,0)",
-                    text: res.data.hash
-                });
-
             }
         } else {
             Toast.fire({
@@ -209,9 +203,10 @@ function formListener() {
             });
             return false;
         } else {
-            Toast.fire({
+            Swal.fire({
                 icon: 'error',
-                title: 'SERVER ERROR!!!'
+                title: '伺服器錯誤',
+                text: '500 ERROR!請聯繫管理員'
             });
             return false;
         }
@@ -227,21 +222,21 @@ function buttonListener() {
             return false;
         Swal.fire({
             title: '確定撤回簽到紀錄嗎？',
-            text: "如果掃到非外校生的QR Code，請直接撤回。<br>目前正在撤回" + history_last.guest.student_id + ' ' + history_last.guest.name + "的紀錄",
+            text: "如果掃到非外校生的QR Code，請直接撤回。\r\n目前正在撤回 「" + history_last.guest.student_id + ' ' + history_last.guest.name + "」 的紀錄",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: '確定撤回',
+            cancelButtonText: '取消'
         }).then((result) => {
             if (result.isConfirmed) {
                 var res = request('DELETE', '/admission/' + history_last.id);
                 if (res.code == 204) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    );
+                    Toast.fire({
+                        icon: 'success',
+                        title: '撤回成功'
+                    });
                 }
             }
         });
@@ -276,4 +271,10 @@ async function getRegisterList() {
 }
 
 
-
+// QR Code setting
+$('#qrcode').qrcode({
+    render: 'table',
+    colorDark: "#000000",
+    colorLight: "rgba(0,0,0,0)",
+    text: res.data.hash
+});

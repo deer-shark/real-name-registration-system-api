@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light" id="nav">
     <div class="container">
         {{-- <span class="navbar-brand"></span> --}}
-        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarrrrr" aria-controls="navbarrrrr" aria-expanded="false" aria-label="Toggle navigation" style="width:100%;border-color:#FFF;">
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarrrrr"
+                aria-controls="navbarrrrr" aria-expanded="false" aria-label="Toggle navigation"
+                style="width:100%;border-color:#FFF;">
             {{-- <span class="navbar-toggler-icon text-white"></span> --}}
             <i class="fas fa-bars"></i> Menu
         </button>
@@ -18,14 +20,15 @@
                     <a class="nav-link" href="{{ route('query') }}"><i class="far fa-id-badge"></i> 通行證查詢</a>
                 </li>
                 --}}
-                    {{--  <li class="nav-item">
-                        <a class="nav-link" href="{{ route('basicform') }}">一般身分填報</a>
-                    </li>  --}}
+                {{--  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('basicform') }}">一般身分填報</a>
+                </li>  --}}
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="A1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="A1" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-barcode"></i> 現場刷入
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A1">
@@ -34,15 +37,18 @@
                         <a class="dropdown-item" href="{{ route('live.id') }}"><i class="far fa-id-card"></i> 刷入身分證</a>
                         <a class="dropdown-item" href="{{ route('live.stu') }}"><i class="fas fa-id-card-alt"></i> 刷入學生證</a>
                         --}}
-                        <a class="dropdown-item" href="{{ route('live.scan.kshs') }}"><i class="fas fa-qrcode"></i> 掃入QR ID</a>
+                        <a class="dropdown-item" href="{{ route('live.scan.kshs') }}"><i class="fas fa-qrcode"></i> 掃入QR
+                            ID</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="A2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="A2" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-cogs"></i> 填報管理
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A2">
-                        <a class="dropdown-item" href="{{ route('data.manage') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
+                        <a class="dropdown-item" href="{{ route('data.manage') }}"><i class="fas fa-tasks"></i>
+                            填報資料管理</a>
                         {{--
                         <a class="dropdown-item" href="{{ route('data.export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>
                         <a class="dropdown-item" href="{{ route('data.import') }}"><i class="fas fa-cloud-upload-alt"></i> 匯入資料</a>
@@ -61,7 +67,8 @@
                 </li>
                 --}}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="A4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="A4" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-alt"></i> 嗨！
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A4">

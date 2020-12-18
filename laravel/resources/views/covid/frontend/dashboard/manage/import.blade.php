@@ -2,9 +2,9 @@
 @extends('covid.frontend.layouts.master')
 @section('title', '匯入資料')
 @section('content')
-    @section('dashboard')
-        <div class="container ct-s">
-            請選擇匯出格式
-        </div>
-    @endsection
+@section('dashboard')
+    <div class="container ct-s">
+        請選擇匯出格式
+    </div>
+@endsection
 @endsection

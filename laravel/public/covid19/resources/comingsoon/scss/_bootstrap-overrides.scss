@@ -1,14 +1,15 @@
 .btn-secondary {
-  background-color: $secondary;
-  border-color: $secondary;
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: darken($secondary, 10%) !important;
-    border-color: darken($secondary, 10%) !important;
-  }
+    background-color: $secondary;
+    border-color: $secondary;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: darken($secondary, 10%) !important;
+        border-color: darken($secondary, 10%) !important;
+    }
 }
 
 .input {
-  font-weight: 300 !important;
+    font-weight: 300 !important;
 }
