@@ -29,7 +29,7 @@
     <meta name="author" content="">
     <meta name="robots" content="noindex,nofollow">
     <!-- icons -->
-    <meta property="og:image" content="https://img.imych.one/works/smhs-reader/images/cover/preview.jpg">
+    <meta property="og:image" content="https://img.imych.one/rnrs/kskg/xmas20/register.png">
     <link rel="shortcut icon" type="image/x-icon" href="https://me.imych.one/icon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="https://img.imych.one/me/images/youu.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://img.imych.one/me/images/youu.png">
