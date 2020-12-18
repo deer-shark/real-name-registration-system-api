@@ -151,6 +151,12 @@ function formListener() {
             };
             var res = request('POST', '/register', data);
             if (res.code == 201) {
+                $('#qrcode').qrcode({
+                    render: 'table',
+                    colorDark: "#000000",
+                    colorLight: "rgba(0,0,0,0)",
+                    text: res.data.hash
+                });
                 Swal.fire({
                     title: '填報完成！',
                     html: '<div id="qrcode" class="d-flex justify-content-center"></div>',
@@ -271,10 +277,3 @@ async function getRegisterList() {
 }
 
 
-// QR Code setting
-$('#qrcode').qrcode({
-    render: 'table',
-    colorDark: "#000000",
-    colorLight: "rgba(0,0,0,0)",
-    text: res.data.hash
-});
