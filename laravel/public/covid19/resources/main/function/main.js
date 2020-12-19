@@ -203,7 +203,7 @@ function formListener() {
                 title: user['name'] + ' 歡迎回來 ❤️',
             }).then(result => {
                 // setTimeout(function () {
-                location.replace("../../");
+                location.replace("../a/overview");
                 // }, 4000)
             });
 
@@ -266,7 +266,7 @@ function Logout() {
             title: '您已登出'
         }).then(result => {
             // setTimeout(function () {
-            location.replace("");
+            location.replace("../a/login");
             // }, 4000)
         });
     } else {
@@ -282,9 +282,5 @@ async function getRegisterList() {
     return res.data;
 }
 
-async function getAccountStatus() {
-    var res = request('GET', '/auth/user');
-    return false;
-}
 
 
