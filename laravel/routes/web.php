@@ -128,7 +128,7 @@ Route::get('/', function () {
 });
 
 //帳號管理端 account(a)
-Route::prefix('a')->group(function () {
+Route::prefix('account')->group(function () {
     Route::get('/overview', function () {
         return view('covid.frontend.dashboard.account.overview');
     })->name('dashboard');
@@ -138,22 +138,23 @@ Route::prefix('a')->group(function () {
 });
 
 Route::group(['prefix' => 'accounts/{account_id}'], function () {
-    Route::get('detail', function ($accountId)    {
-        return $accountId;
+    Route::get('detail', function ($account_id)    {
+        return $account_id;
     });
 });
 
-Route::group(['prefix' => '{org}/{event}'], function ($org, $event) {
-    //根目錄首頁
-    Route::view('/', 'covid.index')->name('home');
-    //一般填寫(KSHS)
-    Route::view('/reg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
-    //入口掃入QR ID(KSHS)
-    Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
-    //所有填報資料管理
-    Route::prefix('data')->group(function () {
-        Route::view('/', 'covid.frontend.dashboard.manage.total')->name('data.manage');
-    });
+//根目錄首頁
+Route::view('/', 'covid.index')->name('home');
+//一般填寫(KSHS)
+Route::view('/reg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
+//入口掃入QR ID(KSHS)
+Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
+//填報資料查詢
+Route::view('/data', 'covid.frontend.dashboard.manage.register-total')->name('data.manage');
+
+
+Route::group(['prefix' => ''], function () {
+
 });
 
 Route::prefix('kskg')->group(function () {
