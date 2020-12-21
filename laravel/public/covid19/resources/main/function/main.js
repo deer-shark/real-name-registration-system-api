@@ -59,10 +59,13 @@ function tableInitialize() {
             field: 'created_at',
             title: '填報時間'
         }, {
+            field: 'times',
+            title: '刷入次數'
+        }, {
             field: 'qrcode',
             title: 'QR Code',
             width: 70,
-            formatter: '<button id="btn_register_qrcode" class="btn btn-info">Show</button>',
+            formatter: '<button id="btn_register_qrcode" class="btn btn-info">顯示</button>',
             events: operateEvents
         }, {
             field: 'delete',
@@ -80,43 +83,24 @@ window.operateEvents = {
     // row    rowdata
     // index  row
     'click #btn_register_delete': function (e, value, row, index) {
-        $.confirm({
-            title: '確認刪除!!',
-            content: '即將刪除訂單',
-            type: 'red',
-            autoClose: 'cancel|10000',
-            buttons: {
-                confirm: {
-                    text: '刪除',
-                    btnClass: 'btn-blue',
-                    action: function () {
-                        HideAlert();
-                        var res = request('DELETE', '/order/' + row['order_id'], null);
-                        if (res.code == 200) {
-                            $.alert({
-                                title: '成功',
-                                content: '<b>刪除成功</b><br>' + res.data['before'] + '-' + res.data['total'] + '=' + res.data['after'],
-                                type: 'green',
-                                typeAnimated: true
-                            });
-
-                            orderDisplay($('#order_info_date').val());
-                        }
-                        if (res.code == 400) {
-                            if (res.data['error'] == 'Sales time has passed') {
-                                $.alert({
-                                    title: '錯誤',
-                                    content: '已超過刪除期限!!',
-                                    type: 'red',
-                                    typeAnimated: true
-                                });
-                            }
-                        }
-                    }
-                },
-                cancel: {
-                    text: '取消'
-                },
+        Swal.fire({
+            title: '確定撤除填報紀錄嗎？',
+            text: "如果發現有不合格的資料，請直接除回。\r\n目前正在撤除 「" + history_last.guest.student_id + ' ' + history_last.guest.name + "」 的紀錄",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '確定撤除',
+            cancelButtonText: '取消'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var res = request('DELETE', '/admission/' + history_last.id);
+                if (res.code == 204) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: '撤除成功'
+                    });
+                }
             }
         });
     },
