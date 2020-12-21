@@ -128,7 +128,7 @@ Route::get('/', function () {
 });
 
 //帳號管理端 account(a)
-Route::prefix('account')->group(function () {
+Route::prefix('a')->group(function () {
     Route::get('/overview', function () {
         return view('covid.frontend.dashboard.account.overview');
     })->name('dashboard');
