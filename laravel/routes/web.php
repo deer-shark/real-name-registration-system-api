@@ -152,6 +152,7 @@ Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('liv
 //填報資料查詢
 Route::view('/data', 'covid.frontend.dashboard.manage.register-total')->name('data.manage');
 
+Route::view('/data2', 'covid.frontend.dashboard.manage.checkin')->name('data.checkin');
 
 Route::group(['prefix' => ''], function () {
 
