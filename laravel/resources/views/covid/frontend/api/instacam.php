@@ -10,7 +10,9 @@
                 Swal.fire({
                     icon: 'error',
                     title: '重複刷入',
-                    text: guest.student_id + ' ' + guest.name + '已刷入第'+ res.data.times +'次'
+                    text: guest.student_id + ' ' + guest.name + '已刷入第'+ res.data.times +'次',
+                    timer: 3000,
+                    timerProgressBar: true
                 });
             }else{
                 Toast.fire({
@@ -25,9 +27,11 @@
                 $("#stu-seat").val(guest.seat);
             }
         } else {
-            Toast.fire({
+            Swal.fire({
                 icon: 'error',
-                title: 'QR Code 有誤或已重複刷入'
+                title: 'QR Code 有誤',
+                timer: 3000,
+                timerProgressBar: true
             });
     }});
     Instascan.Camera.getCameras().then(function (cameras) {
