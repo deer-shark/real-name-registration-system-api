@@ -5,7 +5,7 @@
                 <p class="bold-text">Copyright <span>&#174;</span> 2020 RNRS All Rights Reserved.</p>
             </div>
             <div class="col-sm">
-                <p class="bold-text">Dev by <a href="//imych.one/" target="_blank">黃猷珵</a>、<a href="//github.com/swchen1217/" target="_blank">陳思惟</a></p>
+                <p class="bold-text">Develop by <a href="//imych.one/" target="_blank">黃猷珵</a>、<a href="//github.com/swchen1217/" target="_blank">陳思惟</a></p>
             </div>
         </div>
     </div>
