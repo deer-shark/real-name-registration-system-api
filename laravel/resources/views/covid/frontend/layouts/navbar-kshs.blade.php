@@ -47,6 +47,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="A2">
                         <a class="dropdown-item" href="{{ route('data.manage') }}"><i class="fas fa-tasks"></i> 填報資料管理</a>
+                        <a class="dropdown-item" href="{{ route('data.checkin') }}"><i class="fas fa-stream"></i> 所有刷入紀錄</a>
                         {{--
                         <a class="dropdown-item" href="{{ route('data.export') }}"><i class="fas fa-cloud-download-alt"></i> 匯出資料</a>
                         <a class="dropdown-item" href="{{ route('data.import') }}"><i class="fas fa-cloud-upload-alt"></i> 匯入資料</a>

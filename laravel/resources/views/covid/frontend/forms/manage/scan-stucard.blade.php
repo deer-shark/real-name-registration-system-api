@@ -3,6 +3,7 @@
 @section('title', '現場掃入QR ID')
 @section('content')
 @section('dashboard')
+
     {{--
     <video id="preview"></video>
     <!-- 詢問是否允許開啟相機後，會顯示在這個元素裡 -->
