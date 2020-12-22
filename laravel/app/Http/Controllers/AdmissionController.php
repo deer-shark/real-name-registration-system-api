@@ -130,7 +130,7 @@ class AdmissionController extends Controller
         //return response()->json(['error' => 'Admission Repeatedly'], Response::HTTP_FORBIDDEN);
         $operator = $this->user->where('id', auth()->user()['id'])->first();
         $res = $this->history->create(['guest_id' => $guest['id'], 'operator_id' => $operator['id']]);
-        $result = array_merge($res->only(['id']), array('times' => count($this->history->where('guest_id', $guest['id'])->get()) + 1), array('guest' => $guest, 'operator' => $operator->only(['id', 'name', 'organize', 'role'])));;
+        $result = array_merge($res->only(['id']), array('times' => count($this->history->where('guest_id', $guest['id'])->get())), array('guest' => $guest, 'operator' => $operator->only(['id', 'name', 'organize', 'role'])));;
         return response()->json($result, Response::HTTP_CREATED);
     }
 
