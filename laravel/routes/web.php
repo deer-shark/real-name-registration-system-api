@@ -151,6 +151,8 @@ Route::view('/reg', 'covid.frontend.forms.public.basicform-kshs')->name('basicfo
 Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
 //填報資料查詢
 Route::view('/data', 'covid.frontend.dashboard.manage.register-total')->name('data.manage');
+//填報資料查詢
+Route::view('/checkin', 'covid.frontend.dashboard.manage.checkin')->name('data.checkin');
 
 Route::view('/data2', 'covid.frontend.dashboard.manage.checkin')->name('data.checkin');
 
