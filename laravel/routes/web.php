@@ -154,8 +154,6 @@ Route::view('/data', 'covid.frontend.dashboard.manage.register-total')->name('da
 //填報資料查詢
 Route::view('/checkin', 'covid.frontend.dashboard.manage.checkin')->name('data.checkin');
 
-Route::view('/data2', 'covid.frontend.dashboard.manage.checkin')->name('data.checkin');
-
 Route::group(['prefix' => ''], function () {
 
 });
