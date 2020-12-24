@@ -22,7 +22,9 @@
                 //$("#recently").prepend(`<div class="alert alert-danger stu-in"><i class="fas fa-id-card-alt"></i> ${res.data.guest} <span class="text-dark">已在 20201105 19:30:31 刷入</span></div>`);
                 var guest = res.data.guest;
                 history_last = res.data;
-                $("#stu-name").text(guest.student_id + ' ' + guest.name);
+                $("#stu-name").text(guest.school + ' ' + guest.name);
+                $("#stu-id").val(guest.student_id);
+                $("#stu-school").val(guest.school);
                 $("#stu-class").val(guest.class);
                 $("#stu-seat").val(guest.seat);
             }

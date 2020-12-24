@@ -39,19 +39,18 @@
         <div class="container ct-s">
             <div class="row">
                 <div class="col-sm-6">
-                    <form action="{{ route('post.form.stu-card') }}" method="POST" class="stu-in">
                         <div class="row">
                             <div class="col-sm">
                                 <div class="form-group">
                                     <label for="time"><i class="far fa-clock"></i> 時間</label>
-                                    <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動"
+                                    <input type="text" class="form-control disable" id="time" placeholder="2020/12/25"
                                         disabled>
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <div class="form-group">
                                     <label for="location"><i class="fas fa-location-arrow"></i> 地點</label>
-                                    <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動"
+                                    <input type="text" class="form-control disable" id="location" placeholder="高雄中學"
                                         disabled>
                                 </div>
                             </div>
@@ -114,8 +113,20 @@
                     --}}
                 </div>
                 <div class="col-sm-6">
+                    <form id="form-scan" class="stu-in">
+                    <div class="form-group stu-in">
+                        <label for="form-stu-id"><i class="fas fa-id-card"></i> 學號</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="form-stu-id" placeholder="學號"
+                                    autofocus autocomplete="off" onMouseOver="this.select()">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">送出 <i
+                                        class="fab fa-telegram-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="jumbotron" style="padding-top:25px;padding-bottom:25px;">
-                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu-name">請先將鏡頭對準 QR Code</span>
+                        <h1 class="data-h3"><i class="fas fa-id-card-alt"></i> <span id="stu-name">請先將鏡頭對準 QR Code 或直接輸入學號</span>
                         </h1>
                         <div class="row">
                             {{--
@@ -159,6 +170,22 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
+                                            <label for="class"><i class="fas fa-school"></i> 學校</label>
+                                            <input type="text" class="form-control" id="stu-school" placeholder="學校" required
+                                                autocomplete="off" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="class"><i class="fas fa-id-card-alt"></i> 學號</label>
+                                            <input type="text" class="form-control" id="stu-id" placeholder="學號" required
+                                                autocomplete="off" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
                                             <label for="class"><i class="far fa-map"></i> 班級</label>
                                             <input type="text" class="form-control" id="stu-class" placeholder="班級" required
                                                 autocomplete="off" disabled>
@@ -194,6 +221,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
