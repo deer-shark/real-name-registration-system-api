@@ -66,6 +66,7 @@ class RegisterController extends Controller
         ]);
         if ($validator->fails())
             return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
+        $this->guest->where('student_id', $request->input('student_id'))->where('school', $request->input('school'))->delete();
         $hash = md5(rand());
         while (count($this->guest->where('hash', $hash)->get()))
             $hash = md5(rand());
