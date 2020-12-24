@@ -58,10 +58,10 @@ function tableInitialize() {
         }, {
             field: 'created_at',
             title: '填報時間'
-        }, {
+        }/*, {
             field: 'times',
             title: '刷入次數'
-        }, {
+        }*/, {
             field: 'qrcode',
             title: 'QR Code',
             width: 70,
