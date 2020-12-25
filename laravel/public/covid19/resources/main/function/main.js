@@ -75,6 +75,58 @@ function tableInitialize() {
             events: operateEvents
         }]
     });
+
+    $('#table_checkin').bootstrapTable({
+        dataType: "json",
+        classes: "table table-bordered table-striped table-sm",
+        striped: true,
+        pagination: true,
+        sortable: true,
+        sortOrder: 'desc',
+        uniqueId: 'id',
+        sortName: 'id',
+        pageNumber: 1,
+        pageSize: 10,
+        search: true,
+        showPaginationSwitch: true,
+        columns: [{
+            field: 'id',
+            title: 'ID',
+        }, {
+            field: 'guest.id',
+            title: '填報ID'
+        }, {
+            field: 'guest.school',
+            title: '學校'
+        }, {
+            field: 'guest.student_id',
+            title: '學號'
+        }, {
+            field: 'guest.class',
+            title: '班級'
+        }, {
+            field: 'guest.seat',
+            title: '座號'
+        }, {
+            field: 'guest.name',
+            title: '姓名'
+        }, {
+            field: 'guest.hash',
+            title: 'Hash',
+        }, {
+            field: 'operator.name',
+            title: '刷入者'
+        }, {
+            field: 'created_at',
+            title: '刷入時間'
+        }, {
+            field: 'delete',
+            title: '刪除',
+            width: 70,
+            formatter: '<button id="btn_history_delete" class="btn btn-danger">刪除</button>',
+            events: operateEvents
+        }]
+    });
 }
 
 window.operateEvents = {
@@ -83,7 +135,7 @@ window.operateEvents = {
     // row    rowdata
     // index  row
     'click #btn_register_delete': function (e, value, row, index) {
-        Swal.fire({
+        /*Swal.fire({
             title: '確定撤除填報紀錄嗎？',
             text: "如果發現有不合格的資料，請直接除回。\r\n目前正在撤除 「" + history_last.guest.student_id + ' ' + history_last.guest.name + "」 的紀錄",
             icon: 'warning',
@@ -102,7 +154,7 @@ window.operateEvents = {
                     });
                 }
             }
-        });
+        });*/
     },
 };
 
@@ -263,6 +315,14 @@ function Logout() {
 
 async function getRegisterList() {
     var res = request('GET', '/register');
+    return res.data;
+}
+
+async function getHistoryList() {
+    var res = request('GET', '/admission');
+    res.data.forEach(function (item, index) {
+        res.data[index].guest.hash=item.guest.hash.substr(0,6);
+    })
     return res.data;
 }
 

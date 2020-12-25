@@ -8,7 +8,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            getRegisterList().then(data => {
+            getHistoryList().then(data => {
                 $('#table_checkin').bootstrapTable('load', data);
             });
         })

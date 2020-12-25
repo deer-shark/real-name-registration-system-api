@@ -118,16 +118,23 @@ class AdmissionController extends Controller
 
     public function new(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        /*$validator = Validator::make($request->all(), [
             'hash' => ['required', 'string'],
         ]);
         if ($validator->fails())
-            return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);
-        $guest = $this->guest->where('hash', $request->input('hash'))->first();
-        if ($guest == null)
-            return response()->json(['error' => 'Hash Not Found'], Response::HTTP_NOT_FOUND);
-        //if(count($this->history->where('guest_id',$guest['id'])->get())!=0)
-        //return response()->json(['error' => 'Admission Repeatedly'], Response::HTTP_FORBIDDEN);
+            return response()->json($validator->errors(), Response::HTTP_BAD_REQUEST);*/
+        $guest=null;
+        if($request->input('hash')!=null){
+            $guest = $this->guest->where('hash', $request->input('hash'))->first();
+            if ($guest == null)
+                return response()->json(['error' => 'Hash Not Found'], Response::HTTP_NOT_FOUND);
+        }elseif ($request->input('student_id')!=null){
+            $guest = $this->guest->where('student_id', $request->input('student_id'))->first();
+            if ($guest == null)
+                return response()->json(['error' => 'Student Id Not Found'], Response::HTTP_NOT_FOUND);
+        }else
+            return response()->json('', Response::HTTP_BAD_REQUEST);
+        
         $operator = $this->user->where('id', auth()->user()['id'])->first();
         $res = $this->history->create(['guest_id' => $guest['id'], 'operator_id' => $operator['id']]);
         $result = array_merge($res->only(['id']), array('times' => count($this->history->where('guest_id', $guest['id'])->get())), array('guest' => $guest, 'operator' => $operator->only(['id', 'name', 'organize', 'role'])));;
