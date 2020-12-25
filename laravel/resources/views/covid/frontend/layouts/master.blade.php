@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <title>@yield('title')－雄中雄女實名制填報系統</title>
+    <title>@yield('title')－{{ config('event.string.'.env('EVENT','default').'.banner_title') }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@yield('title')－實名制填報系統">

@@ -260,6 +260,54 @@ function formListener() {
         }
         return false;
     });
+
+    // Scan KSHS 學號
+    $('#form-scan').submit(function () {
+        var input_stuid = $('#form-stu-id').val();
+        if (input_stuid == '') {
+            Toast.fire({
+                icon: 'warning',
+                title: '學號資訊空白，請重新輸入'
+            });
+            return false;
+        }
+        var res = request('POST', `/admission`, {"student_id": input_stuid});
+        if (res.code == 201) {
+            if (res.data.times > 1){
+                var guest = res.data.guest;
+                Swal.fire({
+                    icon: 'error',
+                    title: '重複刷入',
+                    text: guest.student_id + ' ' + guest.name + '已刷入第'+ res.data.times +'次',
+                    timer: 3000,
+                    timerProgressBar: true
+                });
+            }else{
+                Toast.fire({
+                    icon: 'success',
+                    title: '刷入成功 @ ' + dayjs().format('HH:mm:ss')
+                });
+                //$("#recently").prepend(`<div class="alert alert-danger stu-in"><i class="fas fa-id-card-alt"></i> ${res.data.guest} <span class="text-dark">已在 20201105 19:30:31 刷入</span></div>`);
+                var guest = res.data.guest;
+                history_last = res.data;
+                $("#stu-name").text(guest.school + ' ' + guest.name);
+                $("#stu-id").val(guest.student_id);
+                $("#stu-school").val(guest.school);
+                $("#stu-class").val(guest.class);
+                $("#stu-seat").val(guest.seat);
+                $("#form-stu-id").val("");
+            }
+        } else if(res.code==404) {
+            Swal.fire({
+                icon: 'error',
+                title: '學號有誤',
+                timer: 3000,
+                timerProgressBar: true
+            });
+        }
+        return false;
+    });
+
 }
 
 function buttonListener() {

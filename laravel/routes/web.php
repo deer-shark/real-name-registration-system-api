@@ -146,7 +146,7 @@ Route::group(['prefix' => 'accounts/{account_id}'], function () {
 //根目錄首頁
 Route::view('/', 'covid.index')->name('home');
 //一般填寫(KSHS)
-Route::view('/reg', 'covid.frontend.forms.public.basicform-kshs')->name('basicform-kshs');
+Route::view('/reg', 'covid.frontend.forms.public.basicform-epf')->name('basicform-kshs');
 //入口掃入QR ID(KSHS)
 Route::view('/scan', 'covid.frontend.forms.manage.scan-stucard-kshs')->name('live.scan.kshs');
 //填報資料查詢
