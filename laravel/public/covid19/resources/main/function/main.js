@@ -155,6 +155,27 @@ window.operateEvents = {
                 }
             }
         });*/
+    }, 'click #btn_history_delete': function (e, value, row, index) {
+        Swal.fire({
+            title: '確定撤除入場紀錄嗎？',
+            text: "目前正在撤除 「" + row.guest.school + ' ' + row.guest.student_id + ' ' + row.guest.name + "」 的紀錄",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '確定撤除',
+            cancelButtonText: '取消'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var res = request('DELETE', '/admission/' + row.id);
+                if (res.code == 204) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: '撤除成功'
+                    });
+                }
+            }
+        });
     },
 };
 
@@ -273,16 +294,16 @@ function formListener() {
         }
         var res = request('POST', `/admission`, {"student_id": input_stuid});
         if (res.code == 201) {
-            if (res.data.times > 1){
+            if (res.data.times > 1) {
                 var guest = res.data.guest;
                 Swal.fire({
                     icon: 'error',
                     title: '重複刷入',
-                    text: guest.student_id + ' ' + guest.name + '已刷入第'+ res.data.times +'次',
+                    text: guest.student_id + ' ' + guest.name + '已刷入第' + res.data.times + '次',
                     timer: 3000,
                     timerProgressBar: true
                 });
-            }else{
+            } else {
                 Toast.fire({
                     icon: 'success',
                     title: '刷入成功 @ ' + dayjs().format('HH:mm:ss')
@@ -297,7 +318,7 @@ function formListener() {
                 $("#stu-seat").val(guest.seat);
                 $("#form-stu-id").val("");
             }
-        } else if(res.code==404) {
+        } else if (res.code == 404) {
             Swal.fire({
                 icon: 'error',
                 title: '學號有誤',
@@ -369,7 +390,7 @@ async function getRegisterList() {
 async function getHistoryList() {
     var res = request('GET', '/admission');
     res.data.forEach(function (item, index) {
-        res.data[index].guest.hash=item.guest.hash.substr(0,6);
+        res.data[index].guest.hash = item.guest.hash.substr(0, 6);
     })
     return res.data;
 }
