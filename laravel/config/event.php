@@ -2,7 +2,7 @@
 
 return [
 
-    'default' => env('EVENT', 'test'),
+    'default' => env('EVENT', 'default'),
 
     'string' => [
         'default' => [
