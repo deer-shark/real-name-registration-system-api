@@ -13,14 +13,13 @@
                         <div class="col-sm">
                             <div class="form-group">
                                 <label for="time"><i class="far fa-clock"></i> 時間</label>
-                                <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動" disabled>
+                                <input type="text" class="form-control disable" id="time" placeholder="系統自動填入，請勿更動" value="{{ config('event.string.'.env('EVENT','default').'.time') }}" disabled>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-group">
                                 <label for="location"><i class="fas fa-location-arrow"></i> 地點</label>
-                                <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動"
-                                    disabled>
+                                <input type="text" class="form-control disable" id="location" placeholder="系統自動填入，請勿更動" value="{{ config('event.string.'.env('EVENT','default').'.location') }}" disabled>
                             </div>
                         </div>
                     </div>
@@ -28,12 +27,9 @@
                     <div class="row">
                         <div class="col-sm">
                             <div class="form-group">
-                                <label for="form-register-school"><i class="fas fa-school"></i> 單位</label>
-                                <select id="form-register-school" class="form-control" autocomplete="off">
-                                    <option value="" disabled selected>請選擇學校</option>
-                                    <option value="KGHS">雄女 KGHS</option>
-                                    <option value="KSHS">雄中 KSHS</option>
-                                </select>
+                                <label for="form-register-school"><i class="fas fa-school"></i> 單位(如三民高中)</label>
+                                <input type="text" class="form-control" id="form-register-school" placeholder="單位" autocomplete="off">
+
                             </div>
                         </div>
                         <div class="col-sm">
@@ -47,16 +43,24 @@
                                 </select>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col-sm">
                             <div class="form-group">
-                                <label for="name"><i class="far fa-user"></i> 姓名</label>
-                                <input type="text" class="form-control" id="stu-name" placeholder="姓名" autocomplete="off">
+                                <label for="form-register-name"><i class="far fa-user"></i> 姓名</label>
+                                <input type="text" class="form-control" id="form-register-name" placeholder="姓名" autocomplete="off">
                             </div>
                         </div>
-                        
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="form-register-phone"><i class="fas fa-mobile-alt"></i> 聯絡電話</label>
+                                <input type="text" class="form-control" id="form-register-phone" placeholder="聯絡電話" autocomplete="off">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            {{--
             <hr>
             <div class="card">
                 <div class="card-header bg-warning">
@@ -80,6 +84,7 @@
                     </div>
                 </div>
             </div>
+            --}}
             <hr>
             <button type="submit" class="btn btn-lg btn-primary">送出填報 <i class="fab fa-telegram-plane"></i></button>
         </form>

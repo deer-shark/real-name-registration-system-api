@@ -28,5 +28,13 @@ return [
             'org_name' => '鳳中康輔',
             'org_name_short' => 'NAHAHA',
         ],
+
+        'epf1227' => [
+            'banner_title' => '南區學習歷程深談實名制進場整合系統',
+            'org_name' => '高優計畫',
+            'org_name_short' => 'epf1227',
+            'time' => '2020/12/27 1300-1710',
+            'location' => '高雄市立三民高級中學'
+        ],
     ],
 ];
