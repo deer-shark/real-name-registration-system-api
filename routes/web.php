@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome',['name'=>'我yc啦']);
-// });
+ /*Route::get('/', function () {
+     return view('welcome',['name'=>'Deer Shark Studio']);
+ });*/
+
+Route::redirect('/', '/api');
 
 // Route::prefix('f')->group(function ()
 // {
@@ -26,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('covid.frontend.dashboard.index');
 // })->name('dashboard');
-
+/*
 Route::prefix('dev')->group(function () {
     Route::prefix('dev')->group(function () {
         //根目錄
@@ -163,7 +165,7 @@ Route::prefix('kskg')->group(function () {
 
     });
 });
-
+*/
 // Route::middleware(['member'])->group(function () {
 //     Route::get('member_center', function () {
 //         // 經過member middleware驗證後才能進入
